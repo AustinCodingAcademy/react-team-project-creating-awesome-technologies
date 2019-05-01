@@ -1,0 +1,18 @@
+.pure-table {
+  margin-top:50px;
+  margin-left: 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width:100%;
+  empty-cells: show;
+  border: 1px solid #cbcbcb;
+}
+th, td{
+  border: 1px solid #cbcbcb;
+  text-align: center;
+}
+
+th{
+  height: 40px;
+
+}
