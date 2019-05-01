@@ -32,26 +32,42 @@ class App extends Component {
     this.fetchClients();
   }
 
-  render() {
+  render = () => {
     return (
-      <main>
+      <div>
+        <h1>Clients</h1>
         <form onSubmit={this.addClient}>
-          <label> Name
+          <label>
+            name
             <input name="name" />
           </label>
-          <label> Address
+          <label>
+            address
             <input name="address" />
           </label>
-          <label> Phone Number
+          <label>
+            phone number
             <input name="phoneNumber" />
           </label>
-          <input type="submit" />
+          <input type="submit"></input>
         </form>
-        <ul>
-          {this.state.clients.map(client => <li key={client.id}>{client.name}</li>)}
-        </ul>
-      </main>
-    );
+        <table className="pure-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Phone Number</th>
+            </tr>
+          </thead>
+          <tbody>
+              {this.state.clients.map(client => <tr> <td key={client.id}>{client.id}</td> <td>{client.name}</td> <td>{client.address}</td> <td>{client.phoneNumber}</td></tr>)}
+          </tbody>
+
+        </table>
+
+      </div>
+    )
   }
 }
 
