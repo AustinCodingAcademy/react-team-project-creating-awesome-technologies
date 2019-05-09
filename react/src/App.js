@@ -19,9 +19,9 @@ class App extends Component {
         <Container>
           <Nav className="ml-auto " navbar>
             <NavItem>
-              <NavLink href="/clients">Clients</NavLink>
-              <NavLink href="/pets">Pets</NavLink>
-              <NavLink href="/appointments">Appointments</NavLink>
+              <NavLink href="#" to="/clients">Clients</NavLink>
+              <NavLink href="#" to="/pets">Pets</NavLink>
+              <NavLink href="#" to="/appointments">Appointments</NavLink>
             </NavItem>
           </Nav>
           <BrowserRouter>

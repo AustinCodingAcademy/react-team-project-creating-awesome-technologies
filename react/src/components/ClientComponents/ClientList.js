@@ -23,9 +23,9 @@ export default class ClientList extends Component {
               <td>{client.name}</td>
               <td>{client.phoneNumber}</td>
               <td>{client.address}</td>
-              <td><Button color="success">Edit</Button></td>
-              <td><Button color="danger">Delete</Button></td>
-
+              
+              <td><Button color="success" href="/clients/edit">Edit</Button></td>
+              <td><Button data-id={client.id} onClick={this.props.deleteClient} color="danger">Delete</Button></td>
 
               </tr>
           ))}
