@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Clients from "./containers/Clients";
 import Header from "./containers/Header";
-
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import Pets from "./containers/Pets";
 
 import { Container, Nav, NavItem, NavLink } from "reactstrap";
 class App extends Component {
@@ -27,6 +26,9 @@ class App extends Component {
           <BrowserRouter>
             <br />
             <Route exact path="/clients/" component={Clients} />
+            {/* <Link to="/pets">pets</Link> */}
+            <br />
+            <Route exact path="/pets/" component={Pets} />
           </BrowserRouter>
         </Container>
       </main>

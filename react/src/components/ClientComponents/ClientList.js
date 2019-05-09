@@ -1,4 +1,7 @@
-import React, { Component } from "react";
+
+import React, { Component } from 'react'
+import AddPetForm from '../PetComponents/AddPetForm';
+import { NavLink } from 'react-router-dom'
 
 import { Button, Table } from "reactstrap";
 
@@ -33,6 +36,7 @@ export default class ClientList extends Component {
 
         </Table>
         <ul />
+
       </div>
     );
   }
