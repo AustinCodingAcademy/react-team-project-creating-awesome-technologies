@@ -1,38 +1,20 @@
-<<<<<<< Updated upstream
-import React, { Component } from 'react';
-import './App.css';
-import Clients from './containers/Clients';
-=======
 import React, { Component } from "react";
 import "./App.css";
 import Clients from "./containers/Clients";
 import Header from "./containers/Header";
 import Pets from "./containers/Pets";
->>>>>>> Stashed changes
 
-// import { BrowserRouter, Route, Link } from "react-router-dom";
-
+import { Container, Nav, NavItem, NavLink } from "reactstrap";
 class App extends Component {
   state = {
     clients: []
-  }
+  };
 
   render() {
     return (
       <main>
-        <Clients />
+        <Header />
 
-      {/* <BrowserRouter>
-        <Link to="/clients/list">List</Link>
-        <br />
-        <Link to="/clients/">Clients</Link>
-      
-        <Route exact path="/clients/" component={Clients} />
-      </BrowserRouter> */}
-
-<<<<<<< Updated upstream
-        
-=======
         <Container>
           <Nav className="ml-auto " navbar>
             <NavItem>
@@ -49,7 +31,6 @@ class App extends Component {
             <Route exact path="/pets/" component={Pets} />
           </BrowserRouter>
         </Container>
->>>>>>> Stashed changes
       </main>
     );
   }
