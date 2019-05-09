@@ -6,8 +6,6 @@ export default class AddPetForm extends Component {
     return (
       <div>
 
-
-        
       </div>
     )
   }

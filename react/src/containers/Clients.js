@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import AddClientForm from '../components/ClientComponents/AddClientForm';
 import ClientList from '../components/ClientComponents/ClientList';
@@ -37,7 +37,7 @@ componentDidMount = async () => {
     return (
       <div>
         <h1>Clients</h1>
-        <AddClientForm addClient = {this.addClient} />
+        {/* <AddClientForm addClient = {this.addClient} /> */}
         <ClientList clients={this.state.clients} />
          
       </div>
