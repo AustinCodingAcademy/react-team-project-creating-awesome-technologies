@@ -1,30 +1,42 @@
-<<<<<<< Updated upstream
-import React, { Component } from 'react'
-
-=======
-
 import React, { Component } from 'react'
 import AddPetForm from '../PetComponents/AddPetForm';
 import { NavLink } from 'react-router-dom'
->>>>>>> Stashed changes
 
+import { Button, Table } from "reactstrap";
 
 export default class ClientList extends Component {
   render() {
     return (
       <div>
+        <Table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
 
-<<<<<<< Updated upstream
-        <ul>
-          {this.props.clients.map(client => <li key={client.id}>{client.name}</li>)}
-        </ul>
-        
-=======
+          {this.props.clients.map(client => (
+            <tr>
+              <td>{client.id}</td>
+              <td>{client.name}</td>
+              <td>{client.phoneNumber}</td>
+              <td>{client.address}</td>
+              <td><Button color="success">Edit</Button></td>
+              <td><Button color="danger">Delete</Button></td>
+
+
+              </tr>
+          ))}
+          </tbody>
+
         </Table>
         <ul />
 
->>>>>>> Stashed changes
       </div>
-    )
+    );
   }
 }
