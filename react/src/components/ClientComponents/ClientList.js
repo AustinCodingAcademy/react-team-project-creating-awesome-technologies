@@ -1,4 +1,7 @@
-import React, { Component } from "react";
+
+import React, { Component } from 'react'
+import AddPetForm from '../PetComponents/AddPetForm';
+import { NavLink } from 'react-router-dom'
 
 import { Button, Table} from "reactstrap";
 import DeleteClientModal from "./DeleteClientModal";
@@ -36,6 +39,7 @@ export default class ClientList extends Component {
 
         </Table>
         <ul />
+
       </div>
     );
   }
