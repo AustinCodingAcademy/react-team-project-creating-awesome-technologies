@@ -21,6 +21,9 @@ class App extends Component {
               <NavLink href="/clients">Clients</NavLink>
               <NavLink href="/pets">Pets</NavLink>
               <NavLink href="/appointments">Appointments</NavLink>
+              {/* <NavLink href="#" to="/clients">Clients</NavLink>
+              <NavLink href="#" to="/pets">Pets</NavLink>
+              <NavLink href="#" to="/appointments">Appointments</NavLink> */}
             </NavItem>
           </Nav>
           <BrowserRouter>
