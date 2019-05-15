@@ -1,8 +1,12 @@
-import React, { Component } from "react";
 
-import { Button, Table } from "reactstrap";
+import React, { Component } from 'react'
+
+import { Button, Table} from "reactstrap";
+import DeleteClientModal from "./DeleteClientModal";
+
 
 export default class ClientList extends Component {
+
   render() {
     return (
       <div>
@@ -18,21 +22,21 @@ export default class ClientList extends Component {
           <tbody>
 
           {this.props.clients.map(client => (
-            <tr>
+            <tr key={client.id}>
               <td>{client.id}</td>
               <td>{client.name}</td>
               <td>{client.phoneNumber}</td>
               <td>{client.address}</td>
-              <td><Button color="success">Edit</Button></td>
-              <td><Button color="danger">Delete</Button></td>
-
-
+              
+              <td><Button color="success" href="/clients/edit">Edit</Button></td>
+              <td><DeleteClientModal buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td>
               </tr>
           ))}
           </tbody>
 
         </Table>
         <ul />
+
       </div>
     );
   }
