@@ -3,9 +3,12 @@ import React, { Component } from 'react'
 
 export default class AddPetForm extends Component {
   render() {
+    console.log("add pet form");
+
     return (
       <div>
-        <form onSubmit={this.props.addPet}>
+        <form name=""  onSubmit={() => this.savePet}>
+          <input type="number" name="clientId"/>
           <label> Pet Name
             <input name="name" />
           </label>
@@ -15,7 +18,6 @@ export default class AddPetForm extends Component {
           <label> Fixed?
             <input type="checkbox" name="fixed" />
           </label>
-          <input type="submit" />
         </form>
       </div>
     )

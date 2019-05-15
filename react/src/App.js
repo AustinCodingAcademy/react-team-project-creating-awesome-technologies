@@ -3,18 +3,9 @@ import "./App.css";
 import Clients from "./containers/Clients";
 import Header from "./containers/Header";
 import Pets from "./containers/Pets";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import {BrowserRouter, Route}  from "react-router-dom";
-
-
-=======
-import { BrowserRouter, Route, Link } from "react-router-dom";
->>>>>>> b63cfabce4634131038f620180fe581dd87e8e9e
-=======
-
->>>>>>> b7eaa8431e5ef9ec97baa2f68a90a5144198730a
 import { Container, Nav, NavItem, NavLink } from "reactstrap";
+
 class App extends Component {
   state = {
     clients: []
