@@ -1,0 +1,19 @@
+{
+  "name": "grouppro",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "(cd spring-app && mv * .[^.]* ..)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustinCodingAcademy/react-team-project-creating-awesome-technologies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AustinCodingAcademy/react-team-project-creating-awesome-technologies/issues"
+  },
+  "homepage": "https://github.com/AustinCodingAcademy/react-team-project-creating-awesome-technologies#readme"
+}

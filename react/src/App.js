@@ -17,15 +17,21 @@ class App extends Component {
         <Header />
 
         <Container>
-          <Nav className="ml-auto " navbar>
+          <Nav>
             <NavItem>
               <NavLink href="/clients">Clients</NavLink>
+              </NavItem>
+              <NavItem>
               <NavLink href="/pets">Pets</NavLink>
+              </NavItem>
+              <NavItem>              
               <NavLink href="/appointments">Appointments</NavLink>
-              {/* <NavLink href="#" to="/clients">Clients</NavLink>
+
+      {/* <NavLink href="#" to="/clients">Clients</NavLink>
               <NavLink href="#" to="/pets">Pets</NavLink>
               <NavLink href="#" to="/appointments">Appointments</NavLink> */}
             </NavItem>
+      
           </Nav>
           <BrowserRouter>
             <br />
