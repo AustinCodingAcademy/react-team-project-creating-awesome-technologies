@@ -3,6 +3,7 @@ import { Button, Table} from "reactstrap";
 
 export default class PetsList extends Component {
   render() {
+    console.log('TRYING TO POPULATE THE PETS LIST');
     return (
       <div>
           <Table>
