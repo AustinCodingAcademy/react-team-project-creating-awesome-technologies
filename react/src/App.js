@@ -35,10 +35,10 @@ class App extends Component {
           </Nav>
           <BrowserRouter>
             <br />
-            <Route exact path="/clients/" component={Clients} />
+            <Route exact path="/clients" component={Clients} />
             {/* <Link to="/pets">pets</Link> */}
             <br />
-            <Route exact path="/pets/" component={Pets} />
+            <Route exact path="/pets" component={Pets} />
           </BrowserRouter>
         </Container>
       </main>

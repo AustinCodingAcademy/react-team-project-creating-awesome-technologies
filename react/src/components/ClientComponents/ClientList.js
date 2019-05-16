@@ -29,7 +29,7 @@ export default class ClientList extends Component {
               <td>{client.address}</td>
               
               <td><Button color="success" href="/clients/edit">Edit</Button></td>
-              <td><AddPetModal buttonLabel ="Add Pet" client={client} savePet={this.props.addPet}/></td>
+              <td><AddPetModal buttonLabel ="Add Pet" client={client} addPet={this.props.addPet}/></td>
               <td><DeleteClientModal buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td>
               </tr>
           ))}

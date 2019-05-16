@@ -7,8 +7,8 @@ export default class AddPetForm extends Component {
 
     return (
       <div>
-        <form name=""  onSubmit={() => this.savePet}>
-          <input type="number" name="clientId"/>
+        <form name=""  onSubmit={this.props.addPet}>
+          <input type="number" readonly name="clientId" value={this.props.clientId}/>
           <label> Pet Name
             <input name="name" />
           </label>
@@ -17,6 +17,8 @@ export default class AddPetForm extends Component {
           </label>
           <label> Fixed?
             <input type="checkbox" name="fixed" />
+            <input type="submit" />
+
           </label>
         </form>
       </div>
