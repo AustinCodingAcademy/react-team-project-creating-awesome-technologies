@@ -16,3 +16,26 @@ th{
   height: 40px;
 
 }
+
+
+.leftMenu a {
+  color:  #00447C;
+  padding:20px;
+
+}
+.leftMenu a:hover {
+  color:white;
+  background-color: #00447C;
+}
+
+.addNewPet {
+  background: #eeeeee;
+  padding:40px;
+}
+
+.mainFooter {
+  margin-top:60px;
+  background: #444444;
+  padding: 40px;
+  color: white;
+}

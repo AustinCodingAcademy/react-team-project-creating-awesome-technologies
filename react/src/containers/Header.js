@@ -16,7 +16,7 @@ import {
   DropdownItem
 } from "reactstrap";
 
-export default class Clients extends Component {
+export default class Header extends Component {
   constructor(props) {
     super(props);
 
