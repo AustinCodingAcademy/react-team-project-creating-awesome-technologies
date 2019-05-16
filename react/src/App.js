@@ -1,8 +1,12 @@
+
+
+// import { BrowserRouter, Route, Link } from "react-router-dom";
 import React, { Component } from "react";
 import "./App.css";
 import Clients from "./containers/Clients";
 import Header from "./containers/Header";
 import Pets from "./containers/Pets";
+import About from './containers/About';
 import {BrowserRouter, Route}  from "react-router-dom";
 import { Container, Nav, NavItem, NavLink } from "reactstrap";
 
@@ -14,8 +18,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Header />
-
+<Header />
         <Container>
           <Nav>
             <NavItem>
@@ -39,6 +42,8 @@ class App extends Component {
             {/* <Link to="/pets">pets</Link> */}
             <br />
             <Route exact path="/pets/" component={Pets} />
+            <Route exact path="/About/" component={About} />
+
           </BrowserRouter>
         </Container>
       </main>
