@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <main>
-<Header />
+        <Header />
         <Container>
           <Nav>
             <NavItem>
