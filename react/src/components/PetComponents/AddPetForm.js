@@ -7,8 +7,10 @@ export default class AddPetForm extends Component {
 
     return (
       <div>
+
         <form name="savePet"  onSubmit={this.props.addPet}>
           <input type="number" name="clientId"/>
+
           <label> Pet Name
             <input name="name" />
           </label>
@@ -20,6 +22,7 @@ export default class AddPetForm extends Component {
             <input type="submit" />
 
           </label>
+          <input type="submit" />
         </form>
       </div>
     )

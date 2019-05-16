@@ -26,7 +26,9 @@ class App extends Component {
 
             <Route exact path="/clients/" component={Clients} />
             <br />
-            <Route exact path="/pets" component={Pets} />
+            <Route exact path="/pets/" component={Pets} />
+            <br />
+            <Route exact path="/About/" component={About} />
           </BrowserRouter>
         </Container>
       </main>

@@ -22,6 +22,7 @@ addPet = async (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+
       "clientId": e.target.elements["clientID"],
       "name": e.target.elements["name"].value,
       "gender": e.target.elements["gender"].value,
@@ -45,6 +46,7 @@ addPetWithClient= async (e) => {
       "gender": e.target.elements["gender"].value,
       "fixed":e.target.elements["fixed"].value,
       "clientId": e.target.elements["clientID"]
+
     })
   });
   const response = await fetch('/api/pets');
@@ -64,8 +66,8 @@ deletePet = async (e) => {
     }
   });
   const response = await fetch('/api/pets');
-  const clients = await response.json();
-  this.setState({ clients: clients });
+  const pets = await response.json();
+  this.setState({ pets: pets });
 }  
 
 render() {
