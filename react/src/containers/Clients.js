@@ -62,7 +62,8 @@ componentDidMount = async () => {
       body: JSON.stringify({
         "name": e.target.elements["name"].value,
         "gender": e.target.elements["gender"].value,
-        "fixed":e.target.elements["fixed"].value
+        "fixed":e.target.elements["fixed"].value,
+        "clientID":e.target.elements["clientID"].value
       })
     });
     console.log("working");
@@ -83,7 +84,7 @@ componentDidMount = async () => {
         "name": e.target.elements["name"].value,
         "gender": e.target.elements["gender"].value,
         "fixed":e.target.elements["fixed"].value,
-        "id":e.target.elements["data-id"].value
+        "id":e.target.elements["clientID"].value
       })
     });
     const response = await fetch('/api/pets');

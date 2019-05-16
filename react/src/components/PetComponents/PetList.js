@@ -3,7 +3,7 @@ import { Button, Table} from "reactstrap";
 
 export default class PetsList extends Component {
   render() {
-    console.log('TRYING TO POPULATE THE PETS LIST');
+    console.log('Inside Pets List');
     return (
       <div>
           <Table>
@@ -17,6 +17,8 @@ export default class PetsList extends Component {
               <th>Fixed or nah</th>
             </tr>
           </thead>
+          <tbody>
+
           {this.props.pets.map(pet => (
             <tr key={pet.id}>
               <td>{pet.id}</td>
@@ -25,15 +27,10 @@ export default class PetsList extends Component {
               <td>{pet.fixed}</td>
               
               </tr>
+
           ))}
-
-          <tbody>
-
-          </tbody>
+          </tbody> 
           </Table>
-        <ul>
-          {this.props.pets.map(pet => <li key={pet.id}>{pet.name}</li>)}
-        </ul>
       </div>
     )
   }
