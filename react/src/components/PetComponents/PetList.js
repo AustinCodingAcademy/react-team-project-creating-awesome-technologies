@@ -6,7 +6,7 @@ import DeletePetModal from "./DeletePetModal";
 
 export default class PetsList extends Component {
   render() {
-    console.log('TRYING TO POPULATE THE PETS LIST');
+    console.log('Inside Pets List');
     return (
       <div>
           <Table>
@@ -29,6 +29,7 @@ export default class PetsList extends Component {
               <td>{pet.gender}</td>
               <td>{pet.fixed}</td>
 
+
               <td><Button color="success" href="/pets/edit">Edit</Button></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
 
@@ -36,6 +37,8 @@ export default class PetsList extends Component {
           ))}
           </tbody>
 
+          ))}
+          </tbody> 
           </Table>
       </div>
     )
