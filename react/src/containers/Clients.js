@@ -54,6 +54,7 @@ componentDidMount = async () => {
 
   addPet = async (e) => {
     e.preventDefault(); // Don't refresh the browser
+    console.log("FROM CLIENTSJS.");
     await fetch('/api/pets', {
       method: "POST",
       headers: {
@@ -61,16 +62,15 @@ componentDidMount = async () => {
       },
       body: JSON.stringify({
         "name": e.target.elements["name"].value,
-        "gender": e.target.elements["gender"].value,
-        "fixed":e.target.elements["fixed"].value,
-        "clientId":9
+        "gender": "Male",
+        "altered":e.target.elements["altered"].checked,
+        "clientId":4
       })
     });
     console.log("working");
         const response = await fetch('/api/pets');
     const pets = await response.json();
-    this.setState({ pets: pets });
-  
+    this.setState({ pets: pets });  
   }
 
   
@@ -81,7 +81,7 @@ componentDidMount = async () => {
       <div>
         <h1>Clients</h1>
         <AddClientForm addClient = {this.addClient} />
-        <ClientList clients={this.state.clients} deleteClient = {this.deleteClient} />         
+        <ClientList clients={this.state.clients} addPet={this.addPet} deleteClient = {this.deleteClient} />         
       
       </div>
     )

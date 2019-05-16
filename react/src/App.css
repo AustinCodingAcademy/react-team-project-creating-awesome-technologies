@@ -16,3 +16,9 @@ th{
   height: 40px;
 
 }
+
+.mainFooter {
+  background: #444444;
+  padding: 40px;
+  color: white;
+}

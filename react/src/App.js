@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
-import Clients from "./containers/Clients";
-import Header from "./containers/Header";
-import Pets from "./containers/Pets";
-import {BrowserRouter, Route}  from "react-router-dom";
+
+import Header from './containers/Header';
+import Footer from './containers/Footer';
+import Clients from './containers/Clients';
+import Pets from './containers/Pets';
+
+
+import {Link, BrowserRouter, Route}  from "react-router-dom";
 import { Container, Nav, NavItem, NavLink } from "reactstrap";
 
 class App extends Component {
   state = {
-    clients: []
+    clients: [],
+    pets: []
   };
 
   render() {
@@ -17,30 +22,29 @@ class App extends Component {
         <Header />
 
         <Container>
-          <Nav>
-            <NavItem>
-              <NavLink href="/clients">Clients</NavLink>
-              </NavItem>
-              <NavItem>
-              <NavLink href="/pets">Pets</NavLink>
-              </NavItem>
-              <NavItem>              
-              <NavLink href="/appointments">Appointments</NavLink>
 
-      {/* <NavLink href="#" to="/clients">Clients</NavLink>
-              <NavLink href="#" to="/pets">Pets</NavLink>
-              <NavLink href="#" to="/appointments">Appointments</NavLink> */}
-            </NavItem>
-      
-          </Nav>
+         
           <BrowserRouter>
             <br />
+            <Nav>
+              <NavItem>
+              <Link to="/pets" className="nav nav-link mainNav">Pets</Link> 
+
+              </NavItem>
+              <NavItem>
+              <Link to="/clients" className="nav nav-link mainNav">Clients</Link> 
+
+              </NavItem>
+            </Nav>
+
             <Route exact path="/clients" component={Clients} />
-            {/* <Link to="/pets">pets</Link> */}
+            
             <br />
             <Route exact path="/pets" component={Pets} />
           </BrowserRouter>
         </Container>
+
+        <Footer />
       </main>
     );
   }

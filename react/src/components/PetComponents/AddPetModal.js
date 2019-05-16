@@ -19,7 +19,10 @@ class AddPetModal extends React.Component {
     }));
   }
 
+
   render() {
+
+    
     console.log('inside add Pet modal') 
     console.log(this.props.client.id) 
     return (
@@ -30,14 +33,10 @@ class AddPetModal extends React.Component {
           <ModalBody>
         
 
-          <AddPetForm clientId={this.props.client.id} addPet={this.props.addPet} />
+          <AddPetForm clientId={this.props.client.id} addPet={this.props.addPet} toggle={this.toggle} />
 
           </ModalBody>
-          <ModalFooter>
-          <Button color="warning" type="submit" form="savePet" data-id={this.props.client.id}>Add Pet</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-          </ModalFooter>
-        </Modal>
+          </Modal>
       </div>
     );
   }

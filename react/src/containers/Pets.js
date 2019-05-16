@@ -8,10 +8,12 @@ state = {
 
 }
 
+
+
 componentDidMount = async () => {
-  const response = await fetch('/api/clients');
-  const clients = await response.json();
-  this.setState({ clients: clients });
+  const response = await fetch('/api/pets');
+  const pets = await response.json();
+  this.setState({ pets: pets });
 }
 
 addPet = async (e) => {
@@ -22,6 +24,7 @@ addPet = async (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+      "clientId":9,
       "name": e.target.elements["name"].value,
       "gender": e.target.elements["gender"].value,
       "fixed":e.target.elements["fixed"].value
@@ -53,7 +56,7 @@ render() {
   return (
     <div>
       <h1>Pets</h1>
-      <AddPetForm addPets = {this.addClient} />
+      <AddPetForm addPets = {this.addPet} />
       <PetsList pets={this.state.pets} />
        
     </div>
