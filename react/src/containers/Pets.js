@@ -22,7 +22,7 @@ addPet = async (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      "clientId": '1',
+      "clientId": e.target.elements["clientID"],
       "name": e.target.elements["name"].value,
       "gender": e.target.elements["gender"].value,
       "fixed":e.target.elements["fixed"].value
@@ -32,6 +32,7 @@ addPet = async (e) => {
   const pets = await response.json();
   this.setState({ pets: pets });
 }
+
 addPetWithClient= async (e) => {
   e.preventDefault(); // Don't refresh the browser
   await fetch('/api/pets', {
@@ -43,7 +44,7 @@ addPetWithClient= async (e) => {
       "name": e.target.elements["name"].value,
       "gender": e.target.elements["gender"].value,
       "fixed":e.target.elements["fixed"].value,
-      "id":e.target.elements["data-id"].value
+      "clientId": e.target.elements["clientID"]
     })
   });
   const response = await fetch('/api/pets');
