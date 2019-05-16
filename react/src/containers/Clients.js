@@ -61,10 +61,10 @@ componentDidMount = async () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        "clientId":e.target.elements["clientId"].value,
         "name": e.target.elements["name"].value,
-        "gender": "Male",
+        "gender": e.target.elements["gender"].value,
         "altered":e.target.elements["altered"].checked,
-        "clientId":4
       })
     });
     console.log("working");

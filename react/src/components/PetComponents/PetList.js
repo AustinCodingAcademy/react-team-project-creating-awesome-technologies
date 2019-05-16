@@ -24,9 +24,11 @@ export default class PetsList extends Component {
               <td>{pet.gender}</td>
               <td>{pet.fixed}</td>
               
-              {
-              <td><Button color="success" >Edit</Button></td>
-              }
+              
+              <td><Button color="info" >Edit</Button></td>
+              <td><Button color="danger">Delete</Button></td>
+
+              
               </tr>
           ))}
 

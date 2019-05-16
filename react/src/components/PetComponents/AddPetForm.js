@@ -12,7 +12,7 @@ export default class AddPetForm extends Component {
       <div>
 
 <form onSubmit={this.props.addPet}>
-          <Input type="hidden" name="client_id" value={this.props.clientId}/>
+          <Input type="hidden" name="clientId" value={this.props.clientId}/>
 
           <FormGroup>
           <Label for="name"> Name </Label>

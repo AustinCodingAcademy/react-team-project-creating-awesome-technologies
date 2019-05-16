@@ -22,9 +22,6 @@ class AddPetModal extends React.Component {
 
   render() {
 
-    
-    console.log('inside add Pet modal') 
-    console.log(this.props.client.id) 
     return (
       <div>
         <Button color="warning" onClick={this.toggle}>{this.props.buttonLabel}</Button>

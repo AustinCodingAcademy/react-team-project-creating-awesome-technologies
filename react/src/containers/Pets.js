@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AddPetForm from '../components/PetComponents/AddPetForm';
 import PetsList from '../components/PetComponents/PetList';
+import {Col, Row, Container} from "reactstrap";
 
 export default class Pets extends Component {
 state = {
@@ -24,40 +25,53 @@ addPet = async (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      "clientId":9,
+      "clientId":null,
       "name": e.target.elements["name"].value,
       "gender": e.target.elements["gender"].value,
-      "fixed":e.target.elements["fixed"].value
+      "altered":e.target.elements["altered"].checked,
     })
   });
   const response = await fetch('/api/pets');
   const pets = await response.json();
   this.setState({ pets: pets });
 }
-addPetWithClient= async (e) => {
+
+deletePet = async (e) => {
+  console.log('INSIDE DELETE CLIENT');
+  console.log(e.target.getAttribute('data-id'));
+
   e.preventDefault(); // Don't refresh the browser
-  await fetch('/api/pets', {
-    method: "POST",
+  await fetch(`/api/clients/${e.target.getAttribute('data-id')}`, {
+    method: "DELETE",
     headers: {
       'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      "name": e.target.elements["name"].value,
-      "gender": e.target.elements["gender"].value,
-      "fixed":e.target.elements["fixed"].value,
-      "id":e.target.elements["data-id"].value
-    })
+    }
   });
-  const response = await fetch('/api/pets');
-  const pets = await response.json();
-  this.setState({ pets: pets });
-}
+  const response = await fetch('/api/clients');
+  const clients = await response.json();
+  this.setState({ clients: clients });
+
+}  
+
+
+
 render() {
   return (
+    
     <div>
       <h1>Pets</h1>
-      <AddPetForm addPets = {this.addPet} />
+      <Row>
+      <Col md={8}>
       <PetsList pets={this.state.pets} />
+      </Col>
+      <Col md={2} className="addNewPet">
+      <h4>Add a new Pet</h4>
+      <AddPetForm addPet = {this.addPet} />
+      </Col>
+      </Row>
+      
+
+      
        
     </div>
   )
