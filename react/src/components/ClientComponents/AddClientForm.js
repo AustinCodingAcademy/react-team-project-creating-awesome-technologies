@@ -5,8 +5,7 @@ export default class AddClientForm extends Component {
   render() {
     return (
       <div>
-
-<form onSubmit={this.props.addClient}>
+        <form onSubmit={this.props.addClient}>
           <label> Name
             <input name="name" />
           </label>
@@ -17,8 +16,7 @@ export default class AddClientForm extends Component {
             <input name="phoneNumber" />
           </label>
           <input type="submit" />
-        </form>
-        
+        </form>        
       </div>
     )
   }

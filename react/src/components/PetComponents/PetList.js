@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Button, Table} from "reactstrap";
 
+import DeletePetModal from "./DeletePetModal";
+
+
 export default class PetsList extends Component {
   render() {
     console.log('TRYING TO POPULATE THE PETS LIST');
@@ -25,6 +28,10 @@ export default class PetsList extends Component {
               <td>{pet.name}</td>
               <td>{pet.gender}</td>
               <td>{pet.fixed}</td>
+
+              <td><Button color="success" href="/pets/edit">Edit</Button></td>
+              <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
+
             </tr>
           ))}
           </tbody>
