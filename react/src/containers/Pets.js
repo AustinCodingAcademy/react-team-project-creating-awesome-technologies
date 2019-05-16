@@ -9,9 +9,9 @@ state = {
 }
 
 componentDidMount = async () => {
-  const response = await fetch('/api/clients');
-  const clients = await response.json();
-  this.setState({ clients: clients });
+  const response = await fetch('/api/pets');
+  const pets = await response.json();
+  this.setState({ pets: pets });
 }
 
 addPet = async (e) => {
@@ -22,20 +22,38 @@ addPet = async (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+      "clientId": '1',
       "name": e.target.elements["name"].value,
+      "gender": e.target.elements["gender"].value,
     })
   });
   const response = await fetch('/api/pets');
   const pets = await response.json();
   this.setState({ pets: pets });
-
 }
+
+deletePet = async (e) => {
+  console.log('INSIDE DELETE PET');
+  console.log(e.target.getAttribute('data-id') + 'pet id');
+
+  e.preventDefault(); // Don't refresh the browser
+  await fetch(`/api/pets/${e.target.getAttribute('data-id')}`, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  const response = await fetch('/api/pets');
+  const clients = await response.json();
+  this.setState({ clients: clients });
+}  
+
 render() {
   return (
     <div>
       <h1>Pets</h1>
-      <AddPetForm addPets = {this.addClient} />
-      <PetsList pets={this.state.pets} />
+      <AddPetForm addPet = {this.addPet} />
+      <PetsList pets={this.state.pets} deletePet = {this.deletePet}/>
        
     </div>
   )
