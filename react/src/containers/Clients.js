@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import AddClientForm from '../components/ClientComponents/AddClientForm';
 import ClientList from '../components/ClientComponents/ClientList';
-import AddPetForm from '../components/PetComponents/AddPetForm';
 
 export default class Clients extends Component {
 state = {
@@ -32,7 +31,6 @@ componentDidMount = async () => {
     const response = await fetch('/api/clients');
     const clients = await response.json();
     this.setState({ clients: clients });
-
   }
 
   deleteClient = async (e) => {
@@ -49,8 +47,8 @@ componentDidMount = async () => {
     const response = await fetch('/api/clients');
     const clients = await response.json();
     this.setState({ clients: clients });
-
   }  
+
 
   addPet = async (e) => {
     e.preventDefault(); // Don't refresh the browser
@@ -62,7 +60,8 @@ componentDidMount = async () => {
       body: JSON.stringify({
         "name": e.target.elements["name"].value,
         "gender": e.target.elements["gender"].value,
-        "fixed":e.target.elements["fixed"].value
+        "fixed":e.target.elements["fixed"].value,
+        "clientID":e.target.elements["clientID"].value
       })
     });
     console.log("working");
@@ -83,7 +82,7 @@ componentDidMount = async () => {
         "name": e.target.elements["name"].value,
         "gender": e.target.elements["gender"].value,
         "fixed":e.target.elements["fixed"].value,
-        "id":e.target.elements["data-id"].value
+        "id":e.target.elements["clientID"].value
       })
     });
     const response = await fetch('/api/pets');
@@ -98,7 +97,6 @@ componentDidMount = async () => {
         <h1>Clients</h1>
         <AddClientForm addClient = {this.addClient} />
         <ClientList clients={this.state.clients} deleteClient = {this.deleteClient} />         
-      
       </div>
     )
   }
