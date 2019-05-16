@@ -10,7 +10,7 @@ export default class AddPetForm extends Component {
 
     return (
       <div>
-
+      
 <form onSubmit={this.props.addPet}>
           <Input type="hidden" name="clientId" value={this.props.clientId}/>
 
@@ -41,7 +41,7 @@ export default class AddPetForm extends Component {
             <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           </div>
 
-          
+
         </form>
       </div>
     )

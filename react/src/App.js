@@ -10,6 +10,8 @@ import Pets from './containers/Pets';
 import {Link, BrowserRouter, Route}  from "react-router-dom";
 import { Row, Nav, NavItem } from "reactstrap";
 
+
+import { Container, Nav, NavItem, NavLink } from "reactstrap";
 class App extends Component {
   state = {
     clients: [],
@@ -20,8 +22,7 @@ class App extends Component {
     return (
       <main>
         <Header />
-
-         
+        
           <BrowserRouter>
             <Row>
                           
@@ -49,7 +50,6 @@ class App extends Component {
             </div>
             </Row>
 
-            
           </BrowserRouter>
 
         <Footer />

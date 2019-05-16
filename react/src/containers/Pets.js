@@ -25,7 +25,7 @@ addPet = async (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      "clientId":null,
+      "clientId": null,
       "name": e.target.elements["name"].value,
       "gender": e.target.elements["gender"].value,
       "altered":e.target.elements["altered"].checked,
@@ -36,42 +36,38 @@ addPet = async (e) => {
   this.setState({ pets: pets });
 }
 
+
 deletePet = async (e) => {
-  console.log('INSIDE DELETE CLIENT');
-  console.log(e.target.getAttribute('data-id'));
+  console.log('INSIDE DELETE PET');
+  console.log(e.target.getAttribute('data-id') + 'pet id');
 
   e.preventDefault(); // Don't refresh the browser
-  await fetch(`/api/clients/${e.target.getAttribute('data-id')}`, {
+  await fetch(`/api/pets/${e.target.getAttribute('data-id')}`, {
     method: "DELETE",
     headers: {
       'Content-Type': 'application/json'
     }
   });
-  const response = await fetch('/api/clients');
-  const clients = await response.json();
-  this.setState({ clients: clients });
-
+  const response = await fetch('/api/pets');
+  const pets = await response.json();
+  this.setState({ pets: pets });
 }  
-
-
 
 render() {
   return (
     
     <div>
       <h1>Pets</h1>
-      <Row>
+    <Row>
       <Col md={8}>
       <PetsList pets={this.state.pets} />
       </Col>
       <Col md={2} className="addNewPet">
       <h4>Add a new Pet</h4>
       <AddPetForm addPet = {this.addPet} />
-      </Col>
-      </Row>
-      
+    </Col>
+    </Row>
 
-      
        
     </div>
   )
