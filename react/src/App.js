@@ -1,12 +1,14 @@
+
+
 import React, { Component } from "react";
 import "./App.css";
 import Clients from "./containers/Clients";
 import Header from "./containers/Header";
 import Pets from "./containers/Pets";
+import About from './containers/About';
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Container } from "reactstrap";
 
-
-import { Container, Nav, NavItem, NavLink } from "reactstrap";
 class App extends Component {
   state = {
     clients: []
@@ -26,7 +28,13 @@ class App extends Component {
 
             <Route exact path="/clients" component={Clients} />
             <br />
+<<<<<<< HEAD
             <Route exact path="/pets" component={Pets} />
+=======
+            <Route exact path="/pets/" component={Pets} />
+            <Route exact path="/About/" component={About} />
+
+>>>>>>> 51fdc1151a7b2fe2734cd7f2eed9378422290d60
           </BrowserRouter>
         </Container>
       </main>
