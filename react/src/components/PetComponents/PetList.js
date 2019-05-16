@@ -17,26 +17,19 @@ export default class PetsList extends Component {
               <th>Fixed or nah</th>
             </tr>
           </thead>
+          <tbody>
+
           {this.props.pets.map(pet => (
             <tr key={pet.id}>
               <td>{pet.id}</td>
               <td>{pet.name}</td>
               <td>{pet.gender}</td>
               <td>{pet.fixed}</td>
-              
-              {/* <td><Button color="success" href="/clients/edit">Edit</Button></td>
-              <td><AddPetModal buttonLabel ="Add Pet" client={client} deleteClient={this.props.deleteClient} /></td>
-              <td><DeleteClientModal buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td> */}
-              </tr>
+            </tr>
           ))}
-
-          <tbody>
-
           </tbody>
+
           </Table>
-        <ul>
-          {this.props.pets.map(pet => <li key={pet.id}>{pet.name}</li>)}
-        </ul>
       </div>
     )
   }
