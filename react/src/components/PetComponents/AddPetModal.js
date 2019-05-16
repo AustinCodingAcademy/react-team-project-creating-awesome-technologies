@@ -30,23 +30,10 @@ class AddPetModal extends React.Component {
           <ModalBody>
         
 
-          <form name="savePet" onSubmit={this.props.savePet}>
-          <input type="number" name="clientId"/>
-          <label> Pet Name
-            <input name="name" />
-          </label>
-          <label> Gender
-            <input name="gender" />
-          </label>
-          <label> Fixed?
-            <input type="checkbox" name="fixed" />
-          </label>
-          
-
-        </form>
+          <AddPetForm addPet={this.props.addPet} />
           </ModalBody>
           <ModalFooter>
-          <Button color="warning" type="submit" form="savePet" data-id={this.props.client.id}>Add Pet</Button>{' '}
+          {/* <Button color="warning" type="submit" form="savePet" data-id={this.props.client.id}>Add Pet</Button>{' '} */}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>

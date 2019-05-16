@@ -24,9 +24,6 @@ export default class PetsList extends Component {
               <td>{pet.gender}</td>
               <td>{pet.fixed}</td>
               
-              {/* <td><Button color="success" href="/clients/edit">Edit</Button></td>
-              <td><AddPetModal buttonLabel ="Add Pet" client={client} deleteClient={this.props.deleteClient} /></td>
-              <td><DeleteClientModal buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td> */}
               </tr>
           ))}
 

@@ -53,7 +53,7 @@ render() {
   return (
     <div>
       <h1>Pets</h1>
-      <AddPetForm addPets = {this.addClient} />
+      <AddPetForm addPets = {this.addPets} />
       <PetsList pets={this.state.pets} />
        
     </div>
