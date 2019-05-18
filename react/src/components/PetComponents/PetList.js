@@ -33,19 +33,16 @@ export default class PetsList extends Component {
               <td><Button color="danger">Delete</Button></td>
 
               
-              </tr>
-          ))}
+
 
 
               <td><Button color="success" href="/pets/edit">Edit</Button></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
 
-            </tr>
+              </tr>
           ))}
           </tbody>
 
-          ))}
-          </tbody> 
           </Table>
       </div>
     )

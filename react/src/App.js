@@ -8,10 +8,10 @@ import Pets from './containers/Pets';
 
 
 import {Link, BrowserRouter, Route}  from "react-router-dom";
-import { Row, Nav, NavItem } from "reactstrap";
 
 
-import { Container, Nav, NavItem, NavLink } from "reactstrap";
+import { Container, Row, Nav, NavItem, NavLink } from "reactstrap";
+
 class App extends Component {
   state = {
     clients: [],
