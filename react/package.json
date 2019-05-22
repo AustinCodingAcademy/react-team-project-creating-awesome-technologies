@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "localizer": "^0.2.4",
+    "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-big-calendar": "^0.21.0",
     "react-dom": "^16.8.6",

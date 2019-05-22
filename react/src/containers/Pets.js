@@ -11,14 +11,13 @@ state = {
 }
 
   componentDidMount = async () => {
-    const petsResponse = await fetch('/api/pets');
-    const pets = await petsResponse.json();
+    const petsResponse = await fetch('/api/pets');
+    const pets = await petsResponse.json();
+    this.setState({ pets: pets });
 
-    const clientsResponse = await fetch('/api/clients');
-    const clients = await clientsResponse.json();
-    this.setState(
-      { pets: pets },
-      //{ clients: clients }
+    const clientsResponse = await fetch('/api/clients');
+    const clients = await clientsResponse.json();
+    this.setState({ clients: clients }
     );
   }
 
@@ -49,7 +48,7 @@ state = {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        "clientId": e.target.elements["clients"].value,
+        "clientId": e.target.elements["clientId"].value,
         "name": e.target.elements["name"].value,
         "gender": e.target.elements["gender"].value,
         "altered":e.target.elements["altered"].checked,
