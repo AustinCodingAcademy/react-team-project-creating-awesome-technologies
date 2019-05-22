@@ -13,10 +13,10 @@ export default class PetsList extends Component {
           <thead>
             <tr>
               <th>#</th>
-              {/* <th>Owner</th> */}
-              {/* how do you get the owner to populate */}
               <th>Name</th>
               <th>Gender</th>
+              <th>Owner</th>
+              {/* how do you get the owner to populate */}
               <th>Fixed or nah</th>
             </tr>
           </thead>
@@ -27,7 +27,8 @@ export default class PetsList extends Component {
               <td>{pet.id}</td>
               <td>{pet.name}</td>
               <td>{pet.gender}</td>
-              <td>{pet.fixed}</td>
+              <td>{pet.clientId}</td>
+              <td>{pet.fixed === false ? 'No' : 'Yup'}</td>
 
               <td><Button color="info" >Edit</Button></td>
               <td><Button color="danger">Delete</Button></td>
