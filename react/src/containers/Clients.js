@@ -31,7 +31,6 @@ componentDidMount = async () => {
     const response = await fetch('/api/clients');
     const clients = await response.json();
     this.setState({ clients: clients });
-
   }
 
   deleteClient = async (e) => {
@@ -48,8 +47,8 @@ componentDidMount = async () => {
     const response = await fetch('/api/clients');
     const clients = await response.json();
     this.setState({ clients: clients });
-
   }  
+
 
   addPet = async (e) => {
     e.preventDefault(); // Don't refresh the browser
@@ -72,16 +71,15 @@ componentDidMount = async () => {
     this.setState({ pets: pets });  
   }
 
-  
-
   render() {
     console.log("inside Clients.js render")
     return (
       <div>
         <h1>Clients</h1>
         <AddClientForm addClient = {this.addClient} />
-        <ClientList clients={this.state.clients} addPet={this.addPet} deleteClient = {this.deleteClient} />         
       
+        <ClientList clients={this.state.clients} addPet={this.addPet} deleteClient = {this.deleteClient} />         
+
       </div>
     )
   }

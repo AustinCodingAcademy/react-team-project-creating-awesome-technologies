@@ -36,7 +36,6 @@ export default class ClientList extends Component {
           </tbody>
 
         </Table>
-        <ul />
 
       </div>
     );

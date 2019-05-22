@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from 'reactstrap';
 
-class ModalExample extends React.Component {
+class DeleteClientModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class ModalExample extends React.Component {
   }
 
   render() {
-    console.log('inside delete modal') 
+    console.log('inside delete client modal') 
     console.log(this.props.client.id) 
     return (
       <div>
@@ -38,4 +38,4 @@ class ModalExample extends React.Component {
   }
 }
 
-export default ModalExample;
+export default DeleteClientModal;

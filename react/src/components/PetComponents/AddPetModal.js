@@ -29,11 +29,11 @@ class AddPetModal extends React.Component {
           <ModalHeader toggle={this.toggle}>Adding a pet to {this.props.client.name}</ModalHeader>
           <ModalBody>
         
-
           <AddPetForm clientId={this.props.client.id} addPet={this.props.addPet} toggle={this.toggle} />
 
           </ModalBody>
           </Modal>
+
       </div>
     );
   }
