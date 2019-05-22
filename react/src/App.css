@@ -1,31 +1,20 @@
-.pure-table {
-  margin-top:50px;
-  margin-left: 20px;
-  border-collapse: collapse;
-  border-spacing: 0;
-  width:100%;
-  empty-cells: show;
-  border: 1px solid #cbcbcb;
-}
-th, td{
-  border: 1px solid #cbcbcb;
-  text-align: center;
-}
 
-th{
-  height: 40px;
 
+.leftNavigation ul{
+  height: 1000px;
+  padding: 20px;
 }
 
 
 .leftMenu a {
-  color:  #00447C;
+  color:  white;
   padding:20px;
+  border-bottom: 1px solid white;
 
 }
 .leftMenu a:hover {
-  color:white;
-  background-color: #00447C;
+  color:#444444;
+  background-color: white;
 }
 
 .addNewPet {

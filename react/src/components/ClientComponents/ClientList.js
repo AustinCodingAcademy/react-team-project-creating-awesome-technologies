@@ -11,7 +11,7 @@ export default class ClientList extends Component {
   render() {
     return (
       <div>
-        <Table>
+        <Table className="table-striped">
           <thead>
             <tr>
               <th>#</th>
@@ -22,18 +22,18 @@ export default class ClientList extends Component {
           </thead>
           <tbody>
 
-          {this.props.clients.map(client => (
-            <tr key={client.id}>
+          {this.props.clients.map(client => {
+            return (<tr key={client.id}>
               <td>{client.id}</td>
               <td>{client.name}</td>
               <td>{client.phoneNumber}</td>
               <td>{client.address}</td>
-              
+
               <td><EditClientModal buttonLabel="Edit" client={client} editClient={this.props.deleteClient} /></td>
-              <td><AddPetModal buttonLabel ="Add Pet" client={client} addPet={this.props.addPet}/></td>
+              <td><AddPetModal buttonLabel="Add Pet" client={client} addPet={this.props.addPet} /></td>
               <td><DeleteClientModal buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td>
-              </tr>
-          ))}
+            </tr>);
+          })}
           </tbody>
 
         </Table>

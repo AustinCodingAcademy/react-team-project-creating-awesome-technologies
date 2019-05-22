@@ -18,7 +18,7 @@ class DeletePetModal extends React.Component {
   }
 
   render() {
-    console.log('inside delete pet modal') 
+    console.log('render delete pet modal') 
     console.log(this.props.pet.id) 
     return (
       <div>
