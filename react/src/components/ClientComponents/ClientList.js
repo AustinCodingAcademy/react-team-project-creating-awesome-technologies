@@ -11,7 +11,7 @@ export default class ClientList extends Component {
   render() {
     return (
       <div>
-        <Table>
+        <Table className="table-striped">
           <thead>
             <tr>
               <th>#</th>

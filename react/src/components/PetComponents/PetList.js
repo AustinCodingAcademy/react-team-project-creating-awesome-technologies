@@ -4,12 +4,12 @@ import { Button, Table} from "reactstrap";
 import DeletePetModal from "./DeletePetModal";
 
 
-export default class PetsList extends Component {
+export default class PetList extends Component {
   render() {
     console.log('Inside Pets List');
     return (
       <div>
-          <Table>
+          <Table className="table-striped">
           <thead>
             <tr>
               <th>#</th>
@@ -18,6 +18,8 @@ export default class PetsList extends Component {
               <th>Name</th>
               <th>Gender</th>
               <th>Fixed or nah</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -32,16 +34,17 @@ export default class PetsList extends Component {
               <td><Button color="info" >Edit</Button></td>
               <td><Button color="danger">Delete</Button></td>
 
-              
-
-
 
               <td><Button color="success" href="/pets/edit">Edit</Button></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
-
               </tr>
           ))}
+
+           
+          ))}
           </tbody>
+
+          ))}
 
           </Table>
       </div>
