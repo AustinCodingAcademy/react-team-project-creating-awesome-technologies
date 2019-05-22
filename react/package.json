@@ -25,5 +25,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "https://spring-app-my-team.herokuapp.com/"
+   "proxy": "https://spring-app-my-team.herokuapp.com/"
 }
