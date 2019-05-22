@@ -1,7 +1,24 @@
 import React, { Component } from 'react';
-import { Row, FormGroup, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Row, FormGroup, Button, Input } from 'reactstrap';
+import myEventsList from './events.js';
 
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
 
+const localizer = BigCalendar.momentLocalizer(moment) // or globalizeLocalizer
+
+const MyCalendar = props => (
+  <div>
+    <BigCalendar
+      defaultView={BigCalendar.Views.WORK_WEEK}
+       views={['work_week','month']}
+      localizer={localizer}
+      events={myEventsList}
+      startAccessor="start"
+      endAccessor="end"
+    />
+  </div>
+)
 
 export default class AddAppointmentForm extends Component {
 
@@ -20,49 +37,48 @@ export default class AddAppointmentForm extends Component {
     }));
   }
 
+ 
+
 
   render() {
     return (
       <div>
 
-<Button color="primary" onClick={this.toggle}>{this.props.buttonLabel} Add Client</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Adding a new Client</ModalHeader>
-          <ModalBody>
-        
+        {/* <MyCalendar /> */}
 
-          <form onSubmit={this.props.addClient}>
+        {/* <form onSubmit={this.props.addAppointment}>
           <FormGroup>
           <label for="name"> Name </label>
-
-            <input type="text" className="form-control" id="name" name="name" />
+          <Input
+                id="clients"
+                type="select"
+                className="form-control"
+                name="clients"
+              >
+                {this.props.clients.map(client => (
+                  <option value={client.name}>{client.name}</option>
+                ))}
+              </Input>
           </FormGroup>
           
           <FormGroup>
           <label for="address"> Address</label>
-            <input id="address"  type="text" className="form-control" name="address" />
+
           </FormGroup>
 
           <FormGroup>
           <label for="phoneNumber"> Phone Number </label>
 
-            <input id="phoneNumber" type="tel" className="form-control" name="phoneNumber" />
           </FormGroup>
           <hr />
 
           <div className="float-right"> 
-            <Button color="success" type="submit" onClick={this.toggle}>Add Client</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+            <Button color="success" type="submit" >Add Appointment</Button>{' '}
           </div>
 
           
         </form>
-          </ModalBody>
-          
-        </Modal>
-
-
-        
+         */}
       </div>
     )
   }

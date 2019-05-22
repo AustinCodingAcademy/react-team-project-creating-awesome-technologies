@@ -7,13 +7,10 @@ import Footer from './containers/Footer';
 import Clients from './containers/Clients';
 import Pets from './containers/Pets';
 
-
 import {Link, BrowserRouter, Route}  from "react-router-dom";
 import { Row, Nav, NavItem } from "reactstrap";
 import Appointments from "./containers/Appointments";
 
-
-import { Container, Nav, NavItem, NavLink } from "reactstrap";
 class App extends Component {
   state = {
     clients: [],
@@ -45,7 +42,7 @@ class App extends Component {
               </NavItem>
               
               <NavItem>
-              <Link to="/clients" className="nav nav-link mainNav">Appointments</Link> 
+              <Link to="/appointments" className="nav nav-link mainNav">Appointments</Link> 
 
               </NavItem>
               </div>
