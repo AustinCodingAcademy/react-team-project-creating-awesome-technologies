@@ -34,12 +34,10 @@ export default class PetList extends Component {
               <td><Button color="info" >Edit</Button></td>
               <td><Button color="danger">Delete</Button></td>
 
-              
 
               <td><Button color="success" href="/pets/edit">Edit</Button></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
               </tr>
-
           ))}
 
            
@@ -47,6 +45,7 @@ export default class PetList extends Component {
           </tbody>
 
           ))}
+
           </Table>
       </div>
     )
