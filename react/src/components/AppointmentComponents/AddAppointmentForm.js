@@ -46,7 +46,7 @@ export default class AddAppointmentForm extends Component {
 
         {/* <MyCalendar /> */}
 
-        {/* <form onSubmit={this.props.addAppointment}>
+        <form onSubmit={this.props.addAppointment}>
           <FormGroup>
           <label for="name"> Name </label>
           <Input
@@ -78,7 +78,7 @@ export default class AddAppointmentForm extends Component {
 
           
         </form>
-         */}
+        
       </div>
     )
   }
