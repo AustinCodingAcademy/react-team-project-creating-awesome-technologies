@@ -3,3 +3,11 @@ spring:
         url:${JDBC_DATABASE_URL}
         username:${JDBC_DATABASE_USERNAME}
         password:${JDBC_DATABASE_PASSWORD}
+
+server:
+    error:
+        include-stacktrace: never
+
+security:
+    jwt:
+        duration: 3600000
