@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { Button, Table} from "reactstrap";
 import DeleteClientModal from "./DeleteClientModal";
 import AddPetModal from "../PetComponents/AddPetModal";
+import EditClientModal from "./EditClientModal";
 
 export default class ClientList extends Component {
 
@@ -28,7 +29,7 @@ export default class ClientList extends Component {
               <td>{client.phoneNumber}</td>
               <td>{client.address}</td>
               
-              <td><Button color="success" href="/clients/edit">Edit</Button></td>
+              <td><EditClientModal buttonLabel="Edit" client={client} editClient={this.props.deleteClient} /></td>
               <td><AddPetModal buttonLabel ="Add Pet" client={client} addPet={this.props.addPet}/></td>
               <td><DeleteClientModal buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td>
               </tr>

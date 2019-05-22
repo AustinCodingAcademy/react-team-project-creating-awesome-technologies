@@ -11,6 +11,8 @@ import {Link, BrowserRouter, Route}  from "react-router-dom";
 import { Row, Nav, NavItem } from "reactstrap";
 import Appointments from "./containers/Appointments";
 
+import { Container, NavLink } from "reactstrap";
+
 class App extends Component {
   state = {
     clients: [],
