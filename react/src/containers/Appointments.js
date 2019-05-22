@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AddAppointmentForm from '../components/AppointmentComponents/AddAppointmentForm';
+import AppointmentList from '../components/AppointmentComponents/AppointmentList';
 
 
 export default class Appointments extends Component {
@@ -48,8 +49,8 @@ addAppointment = async (e) => {
     return (
       <div>
         <h1>Appointments</h1>
-        <AddAppointmentForm pets={this.state.pets} clients={this.state.clients} addAppointment = {this.addAppointment} />
-
+        <AppointmentList appointments={this.state.appointments} />
+        {/* <AddAppointmentForm pets={this.state.pets} clients={this.state.clients} addAppointment = {this.addAppointment} /> */}
         
       
       </div>

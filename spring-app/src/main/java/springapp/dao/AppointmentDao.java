@@ -46,9 +46,9 @@ public class AppointmentDao {
 				reason = Reason.Checkup;
 			}
 
-			Long ms = rs.getLong("appt_time");
-			Date date = new Date(ms);
-			return new Appointment(rs.getInt("id"), rs.getInt("pet_id"), rs.getInt("client_id"), reason, date,
+			// Long ms = rs.getLong("appt_time");
+			// Date date = new Date(ms);
+			return new Appointment(rs.getInt("id"), rs.getInt("pet_id"), rs.getInt("client_id"), reason, rs.getTimestamp("appt_time"),
 					rs.getInt("duration"), rs.getString("comments"));
 		}
 	};
@@ -92,7 +92,7 @@ public class AppointmentDao {
 					statement.setInt(1, appointment.getPetId());
 					statement.setInt(2, appointment.getClientId());
 					statement.setString(3, appointment.getReason().toString());
-					statement.setLong(4, appointment.getTime().getTime());
+					statement.setTimestamp(4, appointment.getTime());
 					statement.setInt(5, appointment.getDuration());
 					statement.setString(6, appointment.getComments());
 					return statement;

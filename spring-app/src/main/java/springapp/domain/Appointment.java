@@ -8,26 +8,26 @@ import springapp.dao.AppointmentDao;
 import springapp.service.ClientService;
 
 public class Appointment {
-	
+
 	private final Integer id;
 	private final Integer petId;
 	private final Integer clientId;
 	private Reason reason;
-	private Date dateTime;
+	private Timestamp dateTime;
 	private Integer duration;
 	private String comments;
 
-	public Appointment(Integer myId, Integer myPetId, Integer myClientId, Reason myReason, Date dateTime, Integer myDuration, String myComments){
-		
+	public Appointment(Integer myId, Integer myPetId, Integer myClientId, Reason myReason, Timestamp dateTime, Integer myDuration, String myComments){
+
 		this.id = myId;
 		this.petId = myPetId;
-		this.clientId = myClientId;		
+		this.clientId = myClientId;
 		this.reason = myReason;
 		this.dateTime = dateTime;
 		this.duration = myDuration;
 		this.comments = myComments;
 	}
-	
+
 	public Reason getReason() {
 		return reason;
 	}
@@ -36,7 +36,7 @@ public class Appointment {
 		this.reason = apptReason;
 	}
 
-	public Date getTime() {
+	public Timestamp getTime() {
 		return dateTime;
 	}
 
@@ -70,7 +70,7 @@ public class Appointment {
 	public Integer getDuration() {
 		// TODO Auto-generated method stub
 		return duration;
-	}	
-	
-	
+	}
+
+
 }
