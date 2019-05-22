@@ -5,7 +5,8 @@ import {Col, Row, Container} from "reactstrap";
 
 export default class Pets extends Component {
 state = {
-  pets: []
+  pets: [],
+  clients: []
 
 }
 
@@ -15,6 +16,10 @@ componentDidMount = async () => {
   const response = await fetch('/api/pets');
   const pets = await response.json();
   this.setState({ pets: pets });
+
+  const clientsResponse = await fetch('/api/clients');
+  const clients = await clientsResponse.json();
+  this.setState({ clients: clients });
 }
 
 addPet = async (e) => {
@@ -66,7 +71,7 @@ render() {
       </Col>
       <Col md={2} className="addNewPet">
       <h4>Add a new Pet</h4>
-      <AddPetForm addPet = {this.addPet} />
+      <AddPetForm addPet = {this.addPet} fromPets={true}/>
       </Col>
       </Row>
       

@@ -1,12 +1,8 @@
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import { Button, Table} from "reactstrap";
-import DeleteClientModal from "./DeleteClientModal";
-import AddPetModal from "../PetComponents/AddPetModal";
 
-export default class ClientList extends Component {
-
+export default class AppointmentList extends Component {
   render() {
     return (
       <div>
@@ -21,16 +17,16 @@ export default class ClientList extends Component {
           </thead>
           <tbody>
 
-          {this.props.clients.map(client => (
+          {this.props.appointments.map(client => (
             <tr key={client.id}>
               <td>{client.id}</td>
               <td>{client.name}</td>
               <td>{client.phoneNumber}</td>
               <td>{client.address}</td>
               
-              <td><Button color="success" href="/clients/edit">Edit</Button></td>
-              <td><AddPetModal buttonLabel ="Add Pet" client={client} addPet={this.props.addPet}/></td>
-              <td><DeleteClientModal buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td>
+              <td><Button color="success" href="/appointments/edit">Edit</Button></td>
+              <td><Button color="danger" href="/appointments/delete">Delete</Button></td>
+             
               </tr>
           ))}
           </tbody>

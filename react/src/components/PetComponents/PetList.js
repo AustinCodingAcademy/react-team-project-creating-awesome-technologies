@@ -6,7 +6,7 @@ export default class PetsList extends Component {
     console.log('TRYING TO POPULATE THE PETS LIST');
     return (
       <div>
-          <Table>
+          <Table className="table-striped">
           <thead>
             <tr>
               <th>#</th>
@@ -15,6 +15,8 @@ export default class PetsList extends Component {
               <th>Name</th>
               <th>Gender</th>
               <th>Fixed or nah</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           {this.props.pets.map(pet => (

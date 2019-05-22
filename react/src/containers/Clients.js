@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import AddClientForm from '../components/ClientComponents/AddClientForm';
 import ClientList from '../components/ClientComponents/ClientList';
-import AddPetForm from '../components/PetComponents/AddPetForm';
 
 export default class Clients extends Component {
 state = {
