@@ -1,5 +1,4 @@
 package springapp.domain;
-import java.sql.Timestamp;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +12,11 @@ public class Appointment {
 	private final Integer petId;
 	private final Integer clientId;
 	private Reason reason;
-	private Timestamp dateTime;
+	private Date dateTime;
 	private Integer duration;
 	private String comments;
 
-	public Appointment(Integer myId, Integer myPetId, Integer myClientId, Reason myReason, Timestamp dateTime, Integer myDuration, String myComments){
+	public Appointment(Integer myId, Integer myPetId, Integer myClientId, Reason myReason, Date dateTime, Integer myDuration, String myComments){
 
 		this.id = myId;
 		this.petId = myPetId;
@@ -36,11 +35,11 @@ public class Appointment {
 		this.reason = apptReason;
 	}
 
-	public Timestamp getTime() {
+	public Date getTime() {
 		return dateTime;
 	}
 
-	public void setTime(Timestamp time) {
+	public void setTime(Date time) {
 		this.dateTime = time;
 	}
 

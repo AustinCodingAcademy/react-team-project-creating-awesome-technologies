@@ -14,7 +14,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import springapp.domain.Appointment;
 import springapp.domain.Reason;
 import springapp.service.ClientService;
-import java.sql.Timestamp;
 
 /**
  * This command class is used to pass information back and force between the client and the server
@@ -26,7 +25,7 @@ public class AppointmentCommand {
 	private Integer petId;
 	private Integer clientId;
 	private Reason reason;
-	private Timestamp dateTime;
+	private Date dateTime;
 	private String duration;
 	private String comments;
 
@@ -89,7 +88,7 @@ public class AppointmentCommand {
 		this.reason = reason;
 	}
 
-	public Timestamp getDateTime() {
+	public Date getDateTime() {
 
 		return dateTime;
 
@@ -103,7 +102,7 @@ public class AppointmentCommand {
 	}
 
 
-	public void setDateTime(Timestamp time) {
+	public void setDateTime(Date time) {
 		this.dateTime = time;
 	}
 
