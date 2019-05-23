@@ -1,17 +1,4 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-
-export default class Footer extends Component {
-
-  render() {
-    return (
-      <div>
-
-       <footer className="footer mainFooter">
-         Copyright PAWS Veterinary
-
-       </footer>
-=======
 import { Jumbotron, Row } from "reactstrap";
 
 export default class Footer extends Component {
@@ -49,7 +36,6 @@ export default class Footer extends Component {
             </div>
           </Row>
         </footer>
->>>>>>> Endrica.old2
       </div>
     );
   }
