@@ -33,8 +33,28 @@ componentDidMount = async () => {
     this.setState({ clients: clients });
   }
 
+  editClient = async (e) => {
+    console.log('inside editClient from Clients.js')
+    e.preventDefault(); // Don't refresh the browser
+    await fetch('/api/clients', {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "id": 7, //somehow pull id
+        "name": e.target.elements["name"].value,
+        "address" : e.target.elements["address"].value,
+        "phoneNumber":e.target.elements["phoneNumber"].value
+      })
+    });
+    const response = await fetch('/api/clients');
+    const clients = await response.json();
+    this.setState({ clients: clients });
+  }
+  
   deleteClient = async (e) => {
-    console.log('INSIDE DELETE CLIENT');
+    console.log('INSIDE DELETE CLIENT from Clients.js');
     console.log(e.target.getAttribute('data-id'));
 
     e.preventDefault(); // Don't refresh the browser
@@ -78,7 +98,7 @@ componentDidMount = async () => {
         <h1>Clients</h1>
         <AddClientForm addClient = {this.addClient} />
       
-        <ClientList clients={this.state.clients} addPet={this.addPet} deleteClient = {this.deleteClient} />         
+        <ClientList clients={this.state.clients} addPet={this.addPet} deleteClient = {this.deleteClient} editClient={this.editClient}/>         
 
       </div>
     )
