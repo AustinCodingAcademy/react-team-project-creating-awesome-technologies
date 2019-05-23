@@ -49,8 +49,8 @@ addAppointment = async (e) => {
     return (
       <div>
         <h1>Appointments</h1>
-        <AppointmentList appointments={this.state.appointments} />
-        {/* <AddAppointmentForm pets={this.state.pets} clients={this.state.clients} addAppointment = {this.addAppointment} /> */}
+        {/* <AppointmentList appointments={this.state.appointments} /> */}
+        <AddAppointmentForm pets={this.state.pets} clients={this.state.clients} addAppointment = {this.addAppointment} />
         
       
       </div>

@@ -41,10 +41,8 @@ export default class PetList extends Component {
           ))}
 
            
-          ))}
           </tbody>
 
-          ))}
 
           </Table>
       </div>
