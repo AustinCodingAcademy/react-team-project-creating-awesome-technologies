@@ -46,7 +46,7 @@ public class AppointmentDao {
 				reason = Reason.Checkup;
 			}
 
-			Long ms = rs.getLong("appt_time");
+			Long ms = rs.getTimestamp("appt_time").getTime();
 			Date date = new Date(ms);
 			return new Appointment(rs.getInt("id"), rs.getInt("pet_id"), rs.getInt("client_id"), reason, date,
 					rs.getInt("duration"), rs.getString("comments"));
