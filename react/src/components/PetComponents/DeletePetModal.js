@@ -23,8 +23,8 @@ class DeletePetModal extends React.Component {
     return (
       <div>
         <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Are you sure you want to remove{this.props.pet.name}?</ModalHeader>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.title}>
+          <ModalHeader toggle={this.toggle}>Are you sure you want to remove {this.props.pet.name}?</ModalHeader>
           <ModalBody>
             If you for sure for sure want to remove this cute little pet then go ahead.. but God will judge you!
           </ModalBody>

@@ -52,7 +52,7 @@ componentDidMount = async () => {
 
   addPet = async (e) => {
     e.preventDefault(); // Don't refresh the browser
-    console.log("FROM CLIENTSJS.");
+    console.log("adding pet from client page");
     await fetch('/api/pets', {
       method: "POST",
       headers: {
@@ -76,8 +76,7 @@ componentDidMount = async () => {
     return (
       <div>
         <h1>Clients</h1>
-        <AddClientForm addClient = {this.addClient} />
-      
+        <AddClientForm addClient = {this.addClient} />      
         <ClientList clients={this.state.clients} addPet={this.addPet} deleteClient = {this.deleteClient} />         
 
       </div>

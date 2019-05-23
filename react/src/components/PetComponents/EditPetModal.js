@@ -11,18 +11,6 @@ class EditPetModal extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  // state = {
-  //   ...this,
-  //   clients: []
-  // };
-
-  // componentDidMount = async () => {
-  //   const clientsResponse = await fetch("/api/clients");
-  //   const clients = await clientsResponse.json();
-  //   this.setState({ clients: clients });
-  // };
-
-
   toggle() {
     this.setState(prevState => ({
       modal: !prevState.modal
@@ -31,11 +19,13 @@ class EditPetModal extends React.Component {
 
   render() {
     console.log('render edit pet modal') 
-    console.log(this.props.pet.id) 
+    console.log('pet list clients: ' + this.props.clients) 
+    console.log('pet id: ' + this.props.pet.id) 
+
     return (
       <div>
         <Button color="info" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.title}>
           <ModalHeader toggle={this.toggle}>Edit the info for {this.props.pet.name}?</ModalHeader>
           <ModalBody>
             <FormGroup>
@@ -52,27 +42,23 @@ class EditPetModal extends React.Component {
             </FormGroup>
 
             <FormGroup>
-              <Label for="clientsMa"> Clients</Label>
-              <Input id="clientIdDerp" type="select" className="form-control" name="clientsMa">
-              
-                {/* {this.props.clients.map(client => (
-                  <option value={client.id}>{client.name}</option>
-                ))} */}
-              </Input>
-            </FormGroup>
-
-            {/* <FormGroup>
               <Label for="clients"> Clients</Label>
               <Input id="clientId" type="select" className="form-control" name="clients">
-                {this.state.clients.map(client => (
+                {this.props.clients.map(client => (
                   <option value={client.id}>{client.name}</option>
                 ))}
               </Input>
-            </FormGroup> */}
+            </FormGroup>
+
+            <FormGroup check>
+              <Label for="altered" check>
+                <Input type="checkbox" id="altered" /> Altered?
+              </Label>
+            </FormGroup>
 
           </ModalBody>
           <ModalFooter>
-            <Button color="info" data-id={this.props.pet.id} onClick={this.props.editPet}>Update Pet(</Button>{' '}
+            <Button color="info" data-id={this.props.pet.id} onClick={this.props.editPet}>Update Pet</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
