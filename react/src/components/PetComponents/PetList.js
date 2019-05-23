@@ -51,11 +51,10 @@ export default class PetList extends Component {
               <td>{pet.name}</td>
               <td>{pet.gender}</td> 
               <td>{this.getClientName(pet.clientId)}</td>        
-              {/* <td>{pet.clientId}</td>        */}
               {/* <td>{this.props.clients.find(client => (client.id === pet.clientId)).name}</td> */}
               <td>{pet.fixed === false ? 'Nah' : 'Yurp'}</td>
               
-              <td><EditPetModal title="EditPetModal" buttonLabel='Edit' pet={pet} edit={this.props.editPet} clients={this.props.clients}/></td>
+              <td><EditPetModal title="EditPetModal" buttonLabel='Edit' pet={pet} editPet={this.props.editPet} clients={this.props.clients}/></td>
               <td><DeletePetModal title="DeletePetModal" buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
               </tr>
           ))}

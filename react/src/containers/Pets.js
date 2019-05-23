@@ -41,6 +41,13 @@ state = {
 
   editPet = async (e) => {
     console.log('INSIDE EDIT PET');
+    console.log(JSON.stringify({
+      "id": e.target.getAttribute('edit-id'),     
+      "name": e.target.elements["name"].value,
+      "gender": e.target.elements["gender"].value,
+      "clientId": e.target.elements["clientId"].value,
+      "altered":e.target.elements["altered"].checked,
+    }));
     e.preventDefault(); // Don't refresh the browser
     await fetch('/api/pets', {
       method: "PUT",
@@ -48,13 +55,14 @@ state = {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        "id": e.target.getAttribute('data-id'),        
+        "id": e.target.getAttribute('edit-id'),        
         "name": e.target.elements["name"].value,
         "gender": e.target.elements["gender"].value,
         "clientId": e.target.elements["clientId"].value,
         "altered":e.target.elements["altered"].checked,
       })
     });
+    console.log('edit pet api call complete');
     const response = await fetch('/api/pets');
     const pets = await response.json();
     this.setState({ pets: pets });
