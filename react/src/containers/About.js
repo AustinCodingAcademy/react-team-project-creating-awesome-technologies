@@ -7,7 +7,7 @@ export default class About extends Component {
   render() {
     return (
       <div>
-        <h1>AboutUs</h1>
+        <h1>About Us</h1>
         <h4 class="-h1 -light -spacing-24">
           The PAWS Veterinary Services Team
         </h4>

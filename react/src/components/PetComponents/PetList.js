@@ -37,8 +37,9 @@ export default class PetList extends Component {
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
               </tr>
           ))}
-         
+          
           </tbody>
+
           </Table>
       </div>
     )

@@ -46,7 +46,7 @@ export default class AddAppointmentForm extends Component {
 
         {/* <MyCalendar /> */}
 
-        {/* <form onSubmit={this.props.addAppointment}>
+        <form onSubmit={this.props.addAppointment}>
           <FormGroup>
           <label for="name"> Name </label>
           <Input
@@ -64,6 +64,17 @@ export default class AddAppointmentForm extends Component {
           <FormGroup>
           <label for="address"> Address</label>
 
+          <Input
+                id="pets"
+                type="select"
+                className="form-control"
+                name="pets"
+              >
+                {this.props.pets.map(pet => (
+                  <option value={pet.name}>{pet.name}</option>
+                ))}
+              </Input>
+
           </FormGroup>
 
           <FormGroup>
@@ -77,7 +88,7 @@ export default class AddAppointmentForm extends Component {
           </div>
 
           
-        </form> */}
+        </form>
         
       </div>
     )
