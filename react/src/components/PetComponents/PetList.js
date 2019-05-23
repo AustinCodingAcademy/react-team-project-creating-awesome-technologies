@@ -2,22 +2,25 @@ import React, { Component } from 'react'
 import { Button, Table} from "reactstrap";
 
 import DeletePetModal from "./DeletePetModal";
+import EditPetModal from "./EditPetModal";
 
 
-export default class PetsList extends Component {
+
+export default class PetList extends Component {
   render() {
     console.log('Inside Pets List');
     return (
       <div>
-          <Table>
+          <Table className="table-striped">
           <thead>
             <tr>
               <th>#</th>
-              {/* <th>Owner</th> */}
-              {/* how do you get the owner to populate */}
               <th>Name</th>
               <th>Gender</th>
-              <th>Fixed or nah</th>
+              <th>Owner</th>
+              <th>Fixed or Nah?</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -27,22 +30,15 @@ export default class PetsList extends Component {
               <td>{pet.id}</td>
               <td>{pet.name}</td>
               <td>{pet.gender}</td>
-              <td>{pet.fixed}</td>
+              <td>{pet.clientId}</td>
+              <td>{pet.fixed === false ? 'Nah' : 'Yurp'}</td>
 
-              <td><Button color="info" >Edit</Button></td>
-              <td><Button color="danger">Delete</Button></td>
-
-              
-
-
-
-              <td><Button color="success" href="/pets/edit">Edit</Button></td>
+              <td><EditPetModal buttonLabel='Edit' pet={pet} edit={this.props.editPet} clients={this.props.clients}/></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
-
               </tr>
           ))}
+         
           </tbody>
-
           </Table>
       </div>
     )
