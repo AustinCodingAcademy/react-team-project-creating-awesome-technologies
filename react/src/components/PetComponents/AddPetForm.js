@@ -18,44 +18,34 @@ export default class AddPetForm extends Component {
     return (
       <div>
         <form onSubmit={this.props.addPet}>
-          <Input type="hidden" name="clientId" value={this.props.clientId} />
-
           <FormGroup>
             <Label for="name"> Name </Label>
-
             <Input type="text" className="form-control" id="name" name="name" />
           </FormGroup>
 
           <FormGroup>
             <Label for="gender"> Gender</Label>
-            <Input
-              id="gender"
-              type="select"
-              className="form-control"
-              name="gender"
-            >
+            <Input id="gender" type="select" className="form-control" name="gender">
               <option selected="selected">Male</option>
               <option>Female</option>
             </Input>
           </FormGroup>
 
           {this.props.fromPets ? (
+            //Enter this section if the Add came from the List Pets page
             <FormGroup>
               <Label for="clients"> Clients</Label>
-
-              <Input
-                id="clients"
-                type="select"
-                className="form-control"
-                name="clients"
-              >
+              <Input id="clientId" type="select" className="form-control" name="clients">
                 {this.state.clients.map(client => (
-                  <option value={client.name}>{client.name}</option>
+                  <option value={client.id}>{client.name}</option>
                 ))}
               </Input>
             </FormGroup>
           ) : (
-            <span />
+            //Enter this section if the Add came from the List Clients page
+            <Input id="clientId" type="hidden" value={this.props.clientId}>          
+              <span />     
+            </Input>           
           )}
 
           <FormGroup check>
