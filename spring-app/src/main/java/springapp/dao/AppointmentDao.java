@@ -92,7 +92,7 @@ public class AppointmentDao {
 					statement.setInt(1, appointment.getPetId());
 					statement.setInt(2, appointment.getClientId());
 					statement.setString(3, appointment.getReason().toString());
-					statement.setDate(4, new java.sql.Date(appointment.getTime().getTime()));
+					statement.setDate(4, appointment.getTime());
 					statement.setInt(5, appointment.getDuration());
 					statement.setString(6, appointment.getComments());
 					return statement;

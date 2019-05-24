@@ -30,7 +30,19 @@
 }
 
 .myFooter {
-  background-color:#444444;
+  margin-top:10px;
   color: white;
-  padding:20px;
+  padding:40px;
+}
+
+.myFooter img {
+  opacity: 0.7;
+}
+
+.myFooter img:hover {
+  opacity: 1;
+}
+
+.myFooter hr {
+  background-color: white;
 }
