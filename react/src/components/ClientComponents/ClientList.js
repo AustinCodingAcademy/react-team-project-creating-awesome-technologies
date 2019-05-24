@@ -28,12 +28,12 @@ export default class ClientList extends Component {
               <td>{client.name}</td>
               <td>{client.phoneNumber}</td>
               <td>{client.address}</td>
-
-              <td><EditClientModal buttonLabel="Edit" client={client} editClient={this.props.deleteClient} /></td>
-              <td><AddPetModal buttonLabel="Add Pet" client={client} addPet={this.props.addPet} /></td>
-              <td><DeleteClientModal buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td>
-            </tr>);
-          })}
+              
+              <td><EditClientModal title="EditButton" buttonLabel="Edit" client={client} editClient={this.props.editClient} /></td>
+              <td><AddPetModal buttonLabel ="Add Pet" client={client} addPet={this.props.addPet}/></td>
+              <td><DeleteClientModal title="DeleteButton" buttonLabel='Delete' client={client} deleteClient={this.props.deleteClient} /></td>
+              </tr>
+            )})}
           </tbody>
 
         </Table>

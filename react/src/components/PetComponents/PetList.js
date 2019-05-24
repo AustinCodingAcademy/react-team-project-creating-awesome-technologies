@@ -5,10 +5,30 @@ import DeletePetModal from "./DeletePetModal";
 import EditPetModal from "./EditPetModal";
 
 
-
 export default class PetList extends Component {
+ 
+  getClientName(clientId){
+    // for(let k in this.props.clients){
+    //   console.log(k.id);
+    //   if(k.id === clientId){      
+    //     return k.name;
+    //   }
+    // }
+    let petClient = this.props.clients.find(function(e){return e.id === clientId;});
+    for (let k in petClient){
+      if(k === "name"){
+        return petClient[k];
+      }
+    }
+  }
+
   render() {
-    console.log('Inside Pets List');
+    console.log('Render Pets List');
+    console.log(this.props.clients);
+    console.log(this.props.pets);
+    console.log('tried to render clients');
+
+
     return (
       <div>
           <Table className="table-striped">
@@ -31,13 +51,14 @@ export default class PetList extends Component {
               <td>{pet.name}</td>
               <td>{pet.gender}</td>
               <td>{pet.clientId}</td>
-              <td>{pet.fixed === false ? 'Nah' : 'Yurp'}</td>
+              <td>{pet.altered === false ? 'Nah' : 'Yurp'}</td>
 
               <td><EditPetModal buttonLabel='Edit' pet={pet} edit={this.props.editPet} clients={this.props.clients}/></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
+
               </tr>
           ))}
-          
+
           </tbody>
 
           </Table>
