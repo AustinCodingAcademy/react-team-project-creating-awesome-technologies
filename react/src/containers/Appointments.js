@@ -39,8 +39,8 @@ addAppointment = async (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      "pet_id": e.target.elements["petId"].value,
-      "client_id" : e.target.elements["clientId"].value,
+      "petId": e.target.elements["petId"].value,
+      "clientId" : e.target.elements["clientId"].value,
       "reason":e.target.elements["reason"].value,
       "dateTime":new Date().toISOString().slice(0, 19).replace('T', ' '),
       "duration":e.target.elements["duration"].value,

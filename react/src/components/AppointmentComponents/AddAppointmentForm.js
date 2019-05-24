@@ -66,7 +66,7 @@ export default class AddAppointmentForm extends Component {
                 name="petId"
               >
                 {this.props.pets.map(pet => (
-                  <option value={pet.name}>{pet.name}</option>
+                  <option value={pet.id}>{pet.name}</option>
                 ))}
               </Input>
 

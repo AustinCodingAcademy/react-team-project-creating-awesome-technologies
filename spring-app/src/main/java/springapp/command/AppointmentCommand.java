@@ -51,7 +51,6 @@ public class AppointmentCommand {
 		}
 	}
 	
-	@JsonCreator
 	private AppointmentCommand() {
 		
 	}

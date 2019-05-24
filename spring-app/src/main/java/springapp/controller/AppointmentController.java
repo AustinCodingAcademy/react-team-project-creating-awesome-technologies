@@ -61,9 +61,7 @@ public class AppointmentController {
 				 for (Appointment appointment: appointmentService.getAppointments()) {
 		 			 
 					 AppointmentCommand command = new AppointmentCommand(appointment);	
-					 command.setPetName(petService.getPet(appointment.getPetId()).getName());
-
-					 command.setClientName(clientService.getClient(appointment.getClientId()).getName());
+					 
 					 
 					 appointmentCommands.add(command);
 				 }
