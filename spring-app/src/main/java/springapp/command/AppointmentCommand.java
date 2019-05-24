@@ -32,12 +32,7 @@ public class AppointmentCommand {
 	private String duration;
 	private String comments;
 
-	private String clientName;
-	private String petName;
-
-
-
-
+	
 
 	/**
 	 * Creates a command object that has the initial values the same as the appointment passed in
@@ -57,7 +52,7 @@ public class AppointmentCommand {
 	}
 	
 	@JsonCreator
-	private ClientCommand() {
+	private AppointmentCommand() {
 		
 	}
 
@@ -139,20 +134,6 @@ public class AppointmentCommand {
 		this.comments = comments;
 	}
 
-	public String getClientName() {
-		return this.clientName;
-	}
-
-	public void setClientName(String clientName) {
-		this.clientName = clientName;
-	}
-
-	public String getPetName() {
-		return this.petName;
-	}
-
-	public void setPetName(String petName) {
-		this.petName = petName;
-	}
+	
 
 }
