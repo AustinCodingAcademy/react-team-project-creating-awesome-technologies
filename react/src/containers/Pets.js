@@ -30,7 +30,7 @@ addPet = async (e) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      "clientId": null,
+      "clientId": e.target.elements["clientId"].value,
       "name": e.target.elements["name"].value,
       "gender": e.target.elements["gender"].value,
       "altered":e.target.elements["altered"].checked,

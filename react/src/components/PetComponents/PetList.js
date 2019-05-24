@@ -31,10 +31,6 @@ export default class PetList extends Component {
               <td>{pet.gender}</td>
               <td>{pet.fixed}</td>
 
-              <td><Button color="info" >Edit</Button></td>
-              <td><Button color="danger">Delete</Button></td>
-
-
               <td><Button color="success" href="/pets/edit">Edit</Button></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
               </tr>

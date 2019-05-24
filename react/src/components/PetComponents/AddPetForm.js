@@ -18,7 +18,7 @@ export default class AddPetForm extends Component {
     return (
       <div>
         <form onSubmit={this.props.addPet}>
-          <Input type="hidden" name="clientId" value={this.props.clientId} />
+         
 
           <FormGroup>
             <Label for="name"> Name </Label>
@@ -41,21 +41,21 @@ export default class AddPetForm extends Component {
 
           {this.props.fromPets ? (
             <FormGroup>
-              <Label for="clients"> Clients</Label>
+              <Label for="clientId"> Clients</Label>
 
               <Input
-                id="clients"
+                id="clientId"
                 type="select"
                 className="form-control"
-                name="clients"
+                name="clientId"
               >
                 {this.state.clients.map(client => (
-                  <option value={client.name}>{client.name}</option>
+                  <option value={client.id}>{client.name}</option>
                 ))}
               </Input>
             </FormGroup>
           ) : (
-            <span />
+            <Input type="hidden" name="clientId" value={this.props.clientId} />
           )}
 
           <FormGroup check>
