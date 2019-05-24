@@ -18,28 +18,23 @@ export default class AddPetForm extends Component {
     return (
       <div>
         <form onSubmit={this.props.addPet}>
-         
+
 
           <FormGroup>
             <Label for="name"> Name </Label>
-
             <Input type="text" className="form-control" id="name" name="name" />
           </FormGroup>
 
           <FormGroup>
             <Label for="gender"> Gender</Label>
-            <Input
-              id="gender"
-              type="select"
-              className="form-control"
-              name="gender"
-            >
+            <Input id="gender" type="select" className="form-control" name="gender">
               <option selected="selected">Male</option>
               <option>Female</option>
             </Input>
           </FormGroup>
 
           {this.props.fromPets ? (
+            //Enter this section if the Add came from the List Pets page
             <FormGroup>
               <Label for="clientId"> Clients</Label>
 
