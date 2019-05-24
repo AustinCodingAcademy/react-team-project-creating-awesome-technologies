@@ -15,6 +15,9 @@ import springapp.domain.Appointment;
 import springapp.domain.Reason;
 import springapp.service.ClientService;
 
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 /**
  * This command class is used to pass information back and force between the client and the server
  *
@@ -51,6 +54,11 @@ public class AppointmentCommand {
 			this.comments = appointment.getComments();
 
 		}
+	}
+	
+	@JsonCreator
+	private ClientCommand() {
+		
 	}
 
 	public Integer getId() {
