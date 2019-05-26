@@ -42,7 +42,7 @@ addAppointment = async (e) => {
       "petId": e.target.elements["petId"].value,
       "clientId" : e.target.elements["clientId"].value,
       "reason":e.target.elements["reason"].value,
-      "dateTime":new Date().toISOString().slice(0, 19).replace('T', ' '),
+      "dateTime":Date.parse(e.target.elements["dateTime"].value),
       "duration":e.target.elements["duration"].value,
       "comments":e.target.elements["comments"].value
     })

@@ -24,10 +24,10 @@ export default class AppointmentList extends Component {
           {this.props.appointments.map(appointment => (
             <tr key={appointment.id}>
               <td>{appointment.id}</td>
-              <td>{appointment.pet_id}</td>
-              <td>{appointment.client_id}</td>
+              <td>{appointment.petId}</td>
+              <td>{appointment.clientId}</td>
               <td>{appointment.reason}</td>
-              <td>{appointment.appt_time}</td>
+              <td>{Date(appointment.dateTime).toString()}</td>
               <td>{appointment.duration}</td>
               <td>{appointment.comments}</td>
               <td><Button color="danger" href="#">Edit</Button></td>

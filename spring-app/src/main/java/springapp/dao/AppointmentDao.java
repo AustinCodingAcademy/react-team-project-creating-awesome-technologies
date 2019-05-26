@@ -48,6 +48,7 @@ public class AppointmentDao {
 
 			Long ms = rs.getTimestamp("appt_time").getTime();
 			Date date = new Date(ms);
+			
 			return new Appointment(rs.getInt("id"), rs.getInt("pet_id"), rs.getInt("client_id"), reason, date,
 					rs.getInt("duration"), rs.getString("comments"));
 		}
@@ -92,7 +93,7 @@ public class AppointmentDao {
 					statement.setInt(1, appointment.getPetId());
 					statement.setInt(2, appointment.getClientId());
 					statement.setString(3, appointment.getReason().toString());
-					statement.setDate(4, new java.sql.Date(appointment.getTime().getTime()));
+					statement.setString(4, appointment.getTime());
 					statement.setInt(5, appointment.getDuration());
 					statement.setString(6, appointment.getComments());
 					return statement;

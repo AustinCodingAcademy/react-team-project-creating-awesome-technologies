@@ -12,7 +12,7 @@ export default class AddAppointmentForm extends Component {
     super(props);
     this.state = {
       modal: false,
-      date: new Date()
+      value: new Date()
     };
 
 
@@ -20,7 +20,8 @@ export default class AddAppointmentForm extends Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  onDateTimeChange = date => this.setState({ date })
+  onChange = value => this.setState({ value })
+
 
 
   toggle() {
@@ -33,6 +34,7 @@ export default class AddAppointmentForm extends Component {
 
 
   render() {
+    const { value } = this.state.value;
     return (
       <div>
 
@@ -92,13 +94,14 @@ export default class AddAppointmentForm extends Component {
           <FormGroup>
             <label for="dateTime"> Date / Time </label>
               <div>
+           
             <DateTimePicker
               id="dateTime"
               name="dateTime"
               className="form-control"
-              onChange={this.onDateTimeChange}
-              value={this.state.date}
-            />
+              onChange={this.onChange}
+              value={this.state.value}
+            />    
             </div>
           </FormGroup>
 
@@ -129,7 +132,7 @@ export default class AddAppointmentForm extends Component {
           <hr />
 
           <div className="float-right"> 
-            <Button color="success" type="submit" >Add Appointment</Button>{' '}
+            <Button color="success" onClick={this.props.toggle} type="submit" >Add Appointment</Button>{' '}
           </div>
 
           <Button color="secondary" onClick={this.props.toggle}>

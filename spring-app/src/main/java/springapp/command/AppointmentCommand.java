@@ -28,7 +28,7 @@ public class AppointmentCommand {
 	private Integer petId;
 	private Integer clientId;
 	private Reason reason;
-	private Date dateTime;
+	private String dateTime;
 	private String duration;
 	private String comments;
 
@@ -44,7 +44,7 @@ public class AppointmentCommand {
 			this.petId = appointment.getPetId();
 			this.clientId = appointment.getClientId();
 			this.reason = appointment.getReason();
-			this.dateTime = appointment.getTime();
+			this.dateTime = appointment.getTime().toString();
 			this.duration = appointment.getDuration().toString();
 			this.comments = appointment.getComments();
 
@@ -90,7 +90,7 @@ public class AppointmentCommand {
 		this.reason = reason;
 	}
 
-	public Date getDateTime() {
+	public String getDateTime() {
 
 		return dateTime;
 
@@ -104,7 +104,7 @@ public class AppointmentCommand {
 	}
 
 
-	public void setDateTime(Date time) {
+	public void setDateTime(String time) {
 		this.dateTime = time;
 	}
 
