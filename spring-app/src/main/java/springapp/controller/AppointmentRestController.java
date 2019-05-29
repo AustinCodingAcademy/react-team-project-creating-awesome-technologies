@@ -79,6 +79,9 @@ public class AppointmentRestController {
 
 	     // we pass the command to the service, and it nows how update/create a client
          // the service returns the new client object back to us after the save
+		 
+		 
+		 
 		 Appointment appointment = appointmentService.saveAppointment(command);
 	     return appointment;
 

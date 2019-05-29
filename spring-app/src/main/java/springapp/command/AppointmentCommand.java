@@ -15,25 +15,23 @@ import springapp.domain.Appointment;
 import springapp.domain.Reason;
 import springapp.service.ClientService;
 
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 /**
  * This command class is used to pass information back and force between the client and the server
- * 
+ *
  */
 public class AppointmentCommand {
-	
+
 	private Integer id;
 	private Integer petId;
 	private Integer clientId;
 	private Reason reason;
-	private Date dateTime;
+	private String dateTime;
 	private String duration;
 	private String comments;
-	
-	private String clientName;
-	private String petName;
-	
 
-	
 	
 
 	/**
@@ -41,6 +39,7 @@ public class AppointmentCommand {
 	 * @param appointment the appointment to initialize the command object with
 	 */
 	public AppointmentCommand(Appointment appointment) {
+				
 		if(appointment != null) {
 			id = appointment.getId();
 			this.petId = appointment.getPetId();
@@ -53,6 +52,10 @@ public class AppointmentCommand {
 		}
 	}
 	
+	private AppointmentCommand() {
+		
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -60,9 +63,9 @@ public class AppointmentCommand {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
-	
+
+
+
 	public Integer getPetId() {
 		return petId;
 	}
@@ -71,7 +74,7 @@ public class AppointmentCommand {
 		this.petId = petId;
 	}
 
-	
+
 	public Integer getClientId() {
 		return clientId;
 	}
@@ -87,22 +90,22 @@ public class AppointmentCommand {
 	public void setReason(Reason reason) {
 		this.reason = reason;
 	}
-	
-	public Date getDateTime() {
-				
+
+	public String getDateTime() {
+		System.out.println("HEREEEEEEEEEEEEEEEEEEE--------------------------------------");
+		System.out.println(this.dateTime);
 		return dateTime;
-		
+
 	}
-	
+
 	public String getDateTimeString() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm aaa");
 		return formatter.format(dateTime);
-		
-		
+
 	}
 
 
-	public void setDateTime(Date time) {
+	public void setDateTime(String time) {
 		this.dateTime = time;
 	}
 
@@ -110,11 +113,11 @@ public class AppointmentCommand {
 		int hour = Integer.parseInt(duration) / 60;
 		int minute = Integer.parseInt(duration) % 60;
 
-		
+
 		String durationString = hour + "hrs " + minute + "mins.";
 		return durationString;
 	}
-	
+
 	public Integer getDurationInt() {
 		return Integer.parseInt(duration);
 	}
@@ -130,21 +133,7 @@ public class AppointmentCommand {
 	public void setComments(String comments) {
 		this.comments = comments;
 	}
+
 	
-	public String getClientName() {
-		return this.clientName;
-	}
-	
-	public void setClientName(String clientName) {
-		this.clientName = clientName;
-	}
-	
-	public String getPetName() {
-		return this.petName;
-	}
-	
-	public void setPetName(String petName) {
-		this.petName = petName;
-	}
-	
+
 }

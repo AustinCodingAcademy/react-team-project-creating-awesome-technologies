@@ -6,7 +6,7 @@ import HomePage from './containers/HomePage';
 import Footer from './containers/Footer';
 import Clients from './containers/Clients';
 import Pets from './containers/Pets';
-
+import About from './containers/About';
 import {Link, BrowserRouter, Route}  from "react-router-dom";
 import { Row, Nav, NavItem } from "reactstrap";
 import Appointments from "./containers/Appointments";
@@ -47,6 +47,11 @@ class App extends Component {
               <Link to="/appointments" className="nav nav-link mainNav">Appointments</Link> 
 
               </NavItem>
+
+              <NavItem>
+              <Link to="/about" className="nav nav-link mainNav">About Us</Link> 
+
+              </NavItem>
               </div>
             </Nav>
             </div>
@@ -57,6 +62,7 @@ class App extends Component {
             <Route exact path="/clients" component={Clients} />
             <Route exact path="/pets" component={Pets} />
             <Route exact path="/appointments" component={Appointments} />
+            <Route exact path="/about" component={About} />
 
             </div>
             </Row>

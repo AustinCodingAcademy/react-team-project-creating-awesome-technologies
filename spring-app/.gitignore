@@ -15,4 +15,5 @@
 log/
 target/
 
+spring-app.db
 /.metadata/
