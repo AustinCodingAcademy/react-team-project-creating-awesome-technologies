@@ -28,7 +28,7 @@ public class AppointmentCommand {
 	private Integer petId;
 	private Integer clientId;
 	private Reason reason;
-	private Date dateTime;
+	private long dateTime;
 	private String duration;
 	private String comments;
 
@@ -44,7 +44,7 @@ public class AppointmentCommand {
 			this.petId = appointment.getPetId();
 			this.clientId = appointment.getClientId();
 			this.reason = appointment.getReason();
-			this.dateTime = appointment.getTime();
+			this.dateTime = appointment.getTime().getTime();
 			this.duration = appointment.getDuration().toString();
 			this.comments = appointment.getComments();
 
@@ -92,7 +92,7 @@ public class AppointmentCommand {
 
 	public long getDateTime() {
 
-		return dateTime.getTime();
+		return dateTime;
 
 	}
 
@@ -100,12 +100,11 @@ public class AppointmentCommand {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm aaa");
 		return formatter.format(dateTime);
 
-
 	}
 
 
 	public void setDateTime(Date time) {
-		this.dateTime = time;
+		this.dateTime = time.getTime();
 	}
 
 	public String getDuration() {
