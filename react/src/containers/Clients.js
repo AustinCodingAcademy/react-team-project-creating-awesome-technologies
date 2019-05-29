@@ -34,20 +34,26 @@ componentDidMount = async () => {
   }
 
   editClient = async (e) => {
-    console.log('inside editClient from Clients.js')
+    debugger
     e.preventDefault(); // Don't refresh the browser
-    await fetch('/api/clients', {
+    console.log('inside editClient from Clients.js')
+    // console logs were messing it up
+    // console.log(e.target.elements["name"].value);
+    // console.log('client id plz' + e.target.getAttribute('data-id'));
+
+
+    await fetch(('/api/clients', {
       method: "PUT",
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        "id": 7, //somehow pull id
+        "id": e.target.getAttribute('data-id'),
         "name": e.target.elements["name"].value,
         "address" : e.target.elements["address"].value,
         "phoneNumber":e.target.elements["phoneNumber"].value
       })
-    });
+    }));
     const response = await fetch('/api/clients');
     const clients = await response.json();
     this.setState({ clients: clients });

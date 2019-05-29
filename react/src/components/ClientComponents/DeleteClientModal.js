@@ -18,7 +18,6 @@ class DeleteClientModal extends React.Component {
   }
 
   render() {
-    console.log(this.className + "from Delete Client Modal");
     return (
       <div>
         <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>

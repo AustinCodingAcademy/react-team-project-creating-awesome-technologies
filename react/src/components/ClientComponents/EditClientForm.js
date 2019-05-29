@@ -18,6 +18,7 @@ export default class EditClientForm extends Component {
           {/* <form onSubmit={this.props.editClient}> */}
 <form>
           <FormGroup>
+
           <label for="name"> Name </label>
 
             <input type="text" className="form-control" id="name" name="name" />
@@ -36,7 +37,7 @@ export default class EditClientForm extends Component {
           <hr />
 
           <div className="float-right"> 
-            <Button color="success" type="submit" onClick={this.props.editClient}>Edit Client</Button>{' '}
+            <Button color="success" data-id={this.props.clientId} type="submit" onClick={this.props.editClient}>Edit Client</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </div>
 

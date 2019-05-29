@@ -22,7 +22,6 @@ class EditClientModal extends React.Component {
 
 
   render() {
-    console.log(this.props.className + "from Edit Client Modal");
 
     return (
       <div>
