@@ -19,3 +19,15 @@ input {
 label {
   margin-right:12px !important;
 }
+
+.card-img-left{
+  align-content: center;
+  margin-top: 60px;
+  height:50%;
+  width: 50%;
+}
+.card-img-right{
+  align-content: center;
+  height:50%;
+  width: 50%;
+}
