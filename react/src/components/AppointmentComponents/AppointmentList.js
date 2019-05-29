@@ -27,7 +27,7 @@ export default class AppointmentList extends Component {
               <td>{appointment.petId}</td>
               <td>{appointment.clientId}</td>
               <td>{appointment.reason}</td>
-              <td>{Date(appointment.dateTime).toString()}</td>
+              <td>{appointment.dateTime}</td>
               <td>{appointment.duration}</td>
               <td>{appointment.comments}</td>
               <td><Button color="danger" href="#">Edit</Button></td>

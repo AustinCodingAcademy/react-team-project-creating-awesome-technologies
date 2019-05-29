@@ -171,7 +171,7 @@ public class AppointmentController {
 			 @RequestParam(value = "hour") int hour, @RequestParam(value = "minute") int minute,
 			 AppointmentCommand command, RedirectAttributes redirectAttributes) throws ParseException {
 		
-		command.setDateTime(processTime(time, date).toString());	
+		command.setDateTime(processTime(time, date));	
 		command.setDuration(hour*60 + minute);
 		
 		appointmentService.saveAppointment(command);

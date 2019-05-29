@@ -46,10 +46,10 @@ public class AppointmentDao {
 				reason = Reason.Checkup;
 			}
 
-//			Long ms = rs.getTimestamp("appt_time").getTime();
-//			Date date = new Date(ms);
+			Long ms = rs.getTimestamp("appt_time").getTime();
+			Date date = new Date(ms);
 			
-			return new Appointment(rs.getInt("id"), rs.getInt("pet_id"), rs.getInt("client_id"), reason, rs.getString("appt_time"),
+			return new Appointment(rs.getInt("id"), rs.getInt("pet_id"), rs.getInt("client_id"), reason, date,
 					rs.getInt("duration"), rs.getString("comments"));
 		}
 	};
@@ -93,7 +93,7 @@ public class AppointmentDao {
 					statement.setInt(1, appointment.getPetId());
 					statement.setInt(2, appointment.getClientId());
 					statement.setString(3, appointment.getReason().toString());
-					statement.setString(4, appointment.getTime());
+					statement.setDate(4, new java.sql.Date(appointment.getTime().getTime()));
 					statement.setInt(5, appointment.getDuration());
 					statement.setString(6, appointment.getComments());
 					return statement;
@@ -106,7 +106,7 @@ public class AppointmentDao {
 			jdbcTemplate.update(
 					"UPDATE appointments SET pet_id = ?, client_id = ? , reason = ?, appt_time = ?, duration = ?, comments = ? WHERE id = ?",
 					new Object[] { appointment.getPetId(), appointment.getClientId(), appointment.getReason(),
-							appointment.getTime(), appointment.getDuration(), appointment.getComments(),
+							appointment.getTime().getTime(), appointment.getDuration(), appointment.getComments(),
 							id });
 
 		}
