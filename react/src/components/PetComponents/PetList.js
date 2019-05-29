@@ -51,6 +51,7 @@ export default class PetList extends Component {
             <tr key={pet.id}>
               <td>{pet.id}</td>
               <td>{pet.name}</td>
+
               <td>{pet.gender}</td> 
               <td>{this.getClientName(pet.clientId)}</td>        
               {/* <td>{this.props.clients.find(client => (client.id === pet.clientId)).name}</td> //REally this should've worked...*/} 

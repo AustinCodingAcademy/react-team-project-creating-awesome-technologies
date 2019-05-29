@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AddAppointmentForm from '../components/AppointmentComponents/AddAppointmentForm';
 import AppointmentList from '../components/AppointmentComponents/AppointmentList';
 
-import PropogateLoader from 'react-spinners';
+import AppointmentsCalendarView from '../components/AppointmentComponents/AppointmentsCalendarView'
 
 
 export default class Appointments extends Component {
@@ -103,11 +103,9 @@ deleteAppointment = async (e) => {
       <div>
         <h1>Appointments</h1>
 
-        {
-           this.state.appointments.map(appointment => (
-            console.log(appointment.dateTime)
-          ))
-        }
+        {/* <AppointmentsCalendarView appointments={this.state.appointments} /> */}
+
+        
 
        {this.state.appointments.length != 0 ? (
          <div>
