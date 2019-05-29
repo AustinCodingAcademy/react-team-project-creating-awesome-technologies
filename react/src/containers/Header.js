@@ -40,7 +40,7 @@ export default class Header extends Component {
 
         
         <Navbar  color="light" light expand="md">
-          <NavbarBrand href="/">NoNameYet</NavbarBrand>
+          <NavbarBrand href="/">Purrfect Paws Vet</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
 

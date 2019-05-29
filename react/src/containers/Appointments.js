@@ -110,7 +110,7 @@ deleteAppointment = async (e) => {
        {this.state.appointments.length != 0 ? (
          <div>
             <AddAppointmentForm pets={this.state.pets} clients={this.state.clients} title="appointmentAdd"  addAppointment = {this.addAppointment} />
-            <AppointmentList appointments={this.state.appointments} editAppointment={this.editAppointment} deleteAppointment={this.deleteAppointment} /> 
+            <AppointmentList appointments={this.state.appointments} clients={this.state.clients} editAppointment={this.editAppointment} deleteAppointment={this.deleteAppointment} /> 
          </div>
       
        )

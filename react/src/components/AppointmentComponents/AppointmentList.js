@@ -7,6 +7,15 @@ import EditAppointmentForm from './EditAppointmentForm';
 import Moment from 'react-moment';
 
 export default class AppointmentList extends Component {
+  getClientName(clientId){
+    let petClient = this.props.clients.find(function(e){return e.id === clientId;});
+    for (let k in petClient){
+      if(k === "name"){
+        return petClient[k];
+      }
+    }
+  }
+
   render() {
     return (
       <div>
@@ -18,7 +27,7 @@ export default class AppointmentList extends Component {
               <th>Client</th>
               <th>Reason</th>
               <th>Appointment Time</th>
-              <th>Duration</th>
+              <th>Duration (hrs)</th>
               <th>Comments</th>
             </tr>
           </thead>
@@ -29,7 +38,7 @@ export default class AppointmentList extends Component {
             <tr key={appointment.id}>
               <td>{appointment.id}</td>
               <td>{appointment.petId}</td>
-              <td>{appointment.clientId}</td>
+              <td>{this.getClientName(appointment.clientId)}</td>
               <td>{appointment.reason}</td>
               
               <td><Moment format="MM-DD-YYYY hh:mm a">{appointment.time}</Moment></td>

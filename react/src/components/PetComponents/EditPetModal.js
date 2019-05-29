@@ -51,6 +51,7 @@ class EditPetModal extends React.Component {
                   className="form-control"
                   id="name"
                   name="name"
+                  placeholder={this.props.pet.name}
                 />
               </FormGroup>
 
@@ -84,7 +85,8 @@ class EditPetModal extends React.Component {
               <FormGroup check>
                 <Label for="altered" check>
                   <Input type="checkbox" id="altered" name="altered" />
-                  <br /> Altered?
+                  <br />
+                   Altered?
                 </Label>
               </FormGroup>
             </ModalBody>

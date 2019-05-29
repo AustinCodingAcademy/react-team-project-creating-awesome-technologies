@@ -96,7 +96,7 @@ componentDidMount = async () => {
       <div>
         <h1>Clients</h1>
           <AddClientForm addClient = {this.addClient} />      
-          <ClientList clients={this.state.clients} addPet={this.addPet} deleteClient = {this.deleteClient} editClient={this.editClient}/>         
+          <ClientList clients={this.state.clients} addPet={this.addPet} deleteClient={this.deleteClient} editClient={this.editClient}/>         
       </div>
     )
   }
