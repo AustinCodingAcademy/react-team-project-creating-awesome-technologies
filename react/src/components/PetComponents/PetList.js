@@ -33,7 +33,7 @@ export default class PetList extends Component {
               <td>{pet.clientId}</td>
               <td>{pet.altered === false ? 'Nah' : 'Yurp'}</td>
 
-              <td><EditPetModal buttonLabel='Edit' pet={pet} edit={this.props.editPet} clients={this.props.clients}/></td>
+              <td><EditPetModal buttonLabel='Edit' pet={pet} edit={this.props.editPet} clients={this.props.clients} editPet={this.props.editPet}/></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
               </tr>
           ))}

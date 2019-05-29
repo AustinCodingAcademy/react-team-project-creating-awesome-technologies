@@ -102,7 +102,7 @@ public class PetDao {
 		} else {
 			// notice that we do not update the client id since we do not want to enable pet transfer from this method
 			jdbcTemplate.update("UPDATE pets SET name = ?, gender = ? , altered = ?  WHERE id = ?",
-					new Object[] {pet.getName(), pet.getGender(), pet.isAltered(), id});
+					new Object[] {pet.getName(), pet.getGender().toString(), pet.isAltered(), id});
 		}
 		
 		return get(id);

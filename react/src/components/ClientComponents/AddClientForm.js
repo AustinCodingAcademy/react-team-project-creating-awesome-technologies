@@ -25,7 +25,7 @@ export default class AddClientForm extends Component {
     return (
       <div>
 
-<Button color="primary" onClick={this.toggle}>{this.props.buttonLabel} Add Client</Button>
+<Button color="success" onClick={this.toggle}>{this.props.buttonLabel} Add Client</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Adding a new Client</ModalHeader>
           <ModalBody>

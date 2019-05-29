@@ -6,6 +6,8 @@ import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

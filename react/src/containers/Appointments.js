@@ -76,6 +76,7 @@ deleteAppointment = async (e) => {
       <div>
         <h1>Appointments</h1>
 
+        <AppointmentsCalendarView appointments={this.state.appointments} />
 
         {
            this.state.appointments.map(appointment => (
