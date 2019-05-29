@@ -21,7 +21,7 @@ export default class EditClientForm extends Component {
           <ModalBody>
           <FormGroup>
             <Label for="name"> Name </Label>
-            <input type="text" className="form-control" id="name" name="name" />
+            <input type="text" className="form-control" id="name" name="name" placeholder={this.props.client.name} />
           </FormGroup>
 
           <FormGroup>
@@ -31,7 +31,7 @@ export default class EditClientForm extends Component {
               type="text"
               className="form-control"
               name="address"
-              selected={this.props.client.address}
+              placeholder={this.props.client.address}
             />
           </FormGroup>
 
@@ -43,6 +43,7 @@ export default class EditClientForm extends Component {
               type="tel"
               className="form-control"
               name="phoneNumber"
+              placeholder={this.props.client.phoneNumber}
             />
           </FormGroup>
           </ModalBody>
