@@ -1,52 +1,65 @@
-import React, { Component } from 'react';
-import { Row, FormGroup, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React, { Component } from "react";
+import {
+  Row,
+  FormGroup,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Label
+} from "reactstrap";
 import editClient from "../../containers/Clients";
 
-
 export default class EditClientForm extends Component {
-
-
-
   render() {
-    console.log('Rendering EditClientForm')
+    console.log("Rendering EditClientForm");
 
-
-    return (   
+    return (
       <div>
-
-
-          {/* <form onSubmit={this.props.editClient}> */}
-<form>
+        <form edit-id={this.props.clientId} onSubmit={this.props.editClient}>
+          <ModalBody>
           <FormGroup>
-          <label for="name"> Name </label>
-
+            <Label for="name"> Name </Label>
             <input type="text" className="form-control" id="name" name="name" />
           </FormGroup>
-          
+
           <FormGroup>
-          <label for="address"> Address</label>
-            <input id="address"  type="text" className="form-control" name="address" />
+            <Label for="address"> Address</Label>
+            <input
+              id="address"
+              type="text"
+              className="form-control"
+              name="address"
+            />
           </FormGroup>
 
           <FormGroup>
-          <label for="phoneNumber"> Phone Number </label>
+            <Label for="phoneNumber"> Phone Number </Label>
 
-            <input id="phoneNumber" type="tel" className="form-control" name="phoneNumber" />
+            <input
+              id="phoneNumber"
+              type="tel"
+              className="form-control"
+              name="phoneNumber"
+            />
           </FormGroup>
-          <hr />
+          </ModalBody>
 
-          <div className="float-right"> 
-            <Button color="success" type="submit" onClick={this.props.editClient}>Edit Client</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-          </div>
-
-          
+          <ModalFooter>
+            <Button
+              color="success"
+              type="submit"
+              onClick={this.props.toggle}
+            >
+              Edit Client
+            </Button>{" "}
+            <Button color="secondary" onClick={this.props.toggle}>
+              Cancel
+            </Button>
+            </ModalFooter>
         </form>
-
-
-</div>
-
-      
-    )
+      </div>
+    );
   }
 }

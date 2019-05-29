@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
-import { Row, FormGroup, Button, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import React, { Component } from "react";
+import {
+  Row,
+  FormGroup,
+  Button,
+  Input,
+  Label,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from "reactstrap";
 
-
-import DateTimePicker from 'react-datetime-picker';
-
-
+import DateTimePicker from "react-datetime-picker";
 
 export default class AddAppointmentForm extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -15,14 +21,10 @@ export default class AddAppointmentForm extends Component {
       value: new Date()
     };
 
-
-
     this.toggle = this.toggle.bind(this);
   }
 
-  onChange = value => this.setState({ value })
-
-
+  onChange = value => this.setState({ value });
 
   toggle() {
     this.setState(prevState => ({
@@ -30,129 +32,115 @@ export default class AddAppointmentForm extends Component {
     }));
   }
 
- 
-
-
   render() {
-    const { value } = this.state.value;
     return (
       <div>
+        <Button color="info" onClick={this.toggle}>
+          Edit
+        </Button>
+        <Modal
+          name="editApptModal"
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className={this.props.title}
+        >
+          <ModalHeader toggle={this.toggle}>
+            Edit Appointment for {this.props.appointment.clientId}
+          </ModalHeader>
 
-      <Button color="info" onClick={this.toggle}>Edit Appointment</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.title}>
-          <ModalHeader toggle={this.toggle}>Edit Appointment for {this.props.appointment.clientId}</ModalHeader>
-          <ModalBody>
-        
-          <form onSubmit={this.props.editAppointment}>
-          <FormGroup>
-          <label for="clientId"> Client </label>
-          <Input
-                id="clientId"
-                type="number"
-                className="form-control"
-                name="clientId"
-                value={this.props.appointment.clientId}
-                readOnly
-              >
-                
-               
-              </Input>
-          </FormGroup>
-          
-          <FormGroup>
-          <label for="petId"> Pet</label>
+          <form edit-id={this.props.appointment.id} onSubmit={this.props.editAppointment}>
+            <ModalBody>
+              <FormGroup>
+                <Label for="clientId"> Client </Label>
+                <Input
+                  id="clientId"
+                  type="number"
+                  className="form-control"
+                  name="clientId"
+                  value={this.props.appointment.clientId}
+                  readOnly
+                />
+              </FormGroup>
 
-          <Input
-                id="petId"
-                type="number"
-                className="form-control"
-                name="petId"
-                value={this.props.appointment.petId}
-                readOnly
-              >
-               
-              </Input>
+              <FormGroup>
+                <Label for="petId"> Pet</Label>
+                <Input
+                  id="petId"
+                  type="number"
+                  className="form-control"
+                  name="petId"
+                  value={this.props.appointment.petId}
+                  readOnly
+                />
+              </FormGroup>
 
-          </FormGroup>
+              <FormGroup>
+                <Label for="reason"> Reason</Label>
 
-          <FormGroup>
-          <label for="reason"> Reason</label>
+                <Input
+                  id="reason"
+                  type="select"
+                  className="form-control"
+                  name="reason"
+                  //value={this.props.appointment.reason}
+                >
+                  {/* <option selected="selected">{this.props.appointment.reason}</option> */}
+                  <option value="Sick">Sick</option>
+                  <option value="Checkup">Checkup</option>
+                  <option value="Emergency">Emergency</option>
+                </Input>
+              </FormGroup>
 
-          <Input
-                id="reason"
-                type="select"
-                className="form-control"
-                name="reason"
-                value={this.props.appointment.reason}
-              >               
-              <option value="Sick">Sick</option>
-              <option value="Checkup">Checkup</option>
-              <option value="Emergency">Emergency</option>
+              <FormGroup>
+                <Label for="dateTime"> Date / Time </Label>
+                <DateTimePicker
+                    id="dateTime"
+                    name="dateTime"
+                    className="form-control"
+                    onChange={this.onChange}
+                    value={this.state.value}
+                  />
+              </FormGroup>
 
-              </Input>
+              <FormGroup>
+                <Label for="duration"> duration </Label>
+                <Input
+                  id="duration"
+                  type="number"
+                  className="form-control"
+                  name="duration"
+                  //value={this.props.appointment.duration}
+                />
+              </FormGroup>
 
-          </FormGroup>
+              <FormGroup>
+                <Label for="comments"> Comments </Label>
+                <Input
+                  id="comments"
+                  type="text"
+                  className="form-control"
+                  name="comments"
+                  //value={this.props.appointment.comments}
+                />
+              </FormGroup>              
+            </ModalBody>
 
-          <FormGroup>
-            <label for="dateTime"> Date / Time </label>
-              <div>
-           
-            <DateTimePicker
-              id="dateTime"
-              name="dateTime"
-              className="form-control"
-              onChange={this.onChange}
-              value={this.state.value}
-            />    
-            </div>
-          </FormGroup>
+            <ModalFooter>
+                <Button
+                  color="success"
+                  onClick={this.toggle}
+                  type="submit"
+                >
+                  Save Appointment
+                </Button>{" "}            
 
-          <FormGroup>
-            <label for="duration"> duration </label>
-            <Input 
-              id="duration"
-              type="number"
-              className="form-control"
-              name="duration"
-              value={this.props.appointment.duration}
-            >
-              </Input>
-            </FormGroup>
-
-            <FormGroup>
-            <label for="comments"> Comments </label>
-            <Input 
-              id="comments"
-              type="text"
-              className="form-control"
-              name="comments"
-              value={this.props.appointment.comments}
-
-            >
-              </Input>
-            </FormGroup>
-          
-
-
-          <hr />
-
-          <div className="float-right"> 
-            <Button color="success" onClick={this.props.toggle} type="submit" >Save Appointment</Button>{' '}
-          </div>
-
-          <Button color="secondary" onClick={this.props.toggle}>
-              Cancel
-            </Button>
-
-          
-        </form>
-
-          </ModalBody>
-          </Modal>
-
-        
-        
+              <Button color="secondary" onClick={this.toggle}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </form>
+        </Modal>
       </div>
-    )
+    );
   }
 }

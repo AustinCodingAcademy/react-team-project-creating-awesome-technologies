@@ -13,12 +13,9 @@ state = {
   isLoading: true
 }
 
-
 componentDidMount = async () => {
   const appointmentsResponse = await fetch('/api/appointments');
   const appointments = await appointmentsResponse.json();
-  console.log("here is the appointments date ");
-
   this.setState({ appointments: appointments });
 
   const petsResponse = await fetch('/api/pets');
@@ -52,7 +49,39 @@ addAppointment = async (e) => {
   const appointments = await response.json();
   
   this.setState({ appointments: appointments });
+}  
 
+editAppointment = async (e) => {
+  e.preventDefault(); // Don't refresh the browser
+  console.log("about to edit appointment ")
+  console.log({
+    "id": e.target.getAttribute('edit-id'),
+    "petId": e.target.elements["petId"].value,
+    "clientId" : e.target.elements["clientId"].value,
+    "reason":e.target.elements["reason"].value,
+    "dateTime":e.target.elements["dateTime"].value,
+    "duration":e.target.elements["duration"].value,
+    "comments":e.target.elements["comments"].value
+  })
+  await fetch('/api/appointments', {
+    method: "PUT",
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "id": e.target.getAttribute('edit-id'),
+      "petId": e.target.elements["petId"].value,
+      "clientId" : e.target.elements["clientId"].value,
+      "reason":e.target.elements["reason"].value,
+      "dateTime":e.target.elements["dateTime"].value,
+      "duration":e.target.elements["duration"].value,
+      "comments":e.target.elements["comments"].value
+    })
+  });
+  const response = await fetch('/api/appointments');
+  const appointments = await response.json();
+  
+  this.setState({ appointments: appointments });
 }  
 
 deleteAppointment = async (e) => {
@@ -81,7 +110,7 @@ deleteAppointment = async (e) => {
        {this.state.appointments.length != 0 ? (
          <div>
             <AddAppointmentForm pets={this.state.pets} clients={this.state.clients} title="appointmentAdd"  addAppointment = {this.addAppointment} />
-            <AppointmentList appointments={this.state.appointments} deleteAppointment={this.deleteAppointment} /> 
+            <AppointmentList appointments={this.state.appointments} editAppointment={this.editAppointment} deleteAppointment={this.deleteAppointment} /> 
          </div>
       
        )

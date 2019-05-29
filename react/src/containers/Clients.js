@@ -8,7 +8,6 @@ state = {
   clients: []
 }
 
-
 componentDidMount = async () => {
   const response = await fetch('/api/clients');
   const clients = await response.json();
@@ -42,7 +41,7 @@ componentDidMount = async () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        "id": 7, //somehow pull id
+        "id": e.target.getAttribute('edit-id'),     
         "name": e.target.elements["name"].value,
         "address" : e.target.elements["address"].value,
         "phoneNumber":e.target.elements["phoneNumber"].value
