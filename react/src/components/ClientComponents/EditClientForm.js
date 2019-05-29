@@ -17,7 +17,7 @@ export default class EditClientForm extends Component {
 
     return (
       <div>
-        <form edit-id={this.props.clientId} onSubmit={this.props.editClient}>
+        <form edit-id={this.props.client.id} onSubmit={this.props.editClient}>
           <ModalBody>
           <FormGroup>
             <Label for="name"> Name </Label>
@@ -31,6 +31,7 @@ export default class EditClientForm extends Component {
               type="text"
               className="form-control"
               name="address"
+              selected={this.props.client.address}
             />
           </FormGroup>
 

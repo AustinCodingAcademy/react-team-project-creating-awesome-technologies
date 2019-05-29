@@ -31,7 +31,7 @@ class EditClientModal extends React.Component {
           <ModalHeader toggle={this.toggle}>Editing {this.props.client.name}</ModalHeader>
           <ModalBody>
         
-          <EditClientForm clientId={this.props.client.id} editClient={this.props.editClient} toggle={this.toggle} />
+          <EditClientForm client={this.props.client} editClient={this.props.editClient} toggle={this.toggle} />
 
           </ModalBody>
           </Modal>
