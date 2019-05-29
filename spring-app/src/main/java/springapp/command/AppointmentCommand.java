@@ -90,9 +90,9 @@ public class AppointmentCommand {
 		this.reason = reason;
 	}
 
-	public Date getDateTime() {
+	public long getDateTime() {
 
-		return dateTime;
+		return dateTime.getTime();
 
 	}
 

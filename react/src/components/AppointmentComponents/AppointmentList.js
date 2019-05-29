@@ -22,18 +22,19 @@ export default class AppointmentList extends Component {
           <tbody>
 
           {this.props.appointments.map(appointment => (
-            <tr key={appointment.id}>
-              <td>{appointment.id}</td>
-              <td>{appointment.petId}</td>
-              <td>{appointment.clientId}</td>
-              <td>{appointment.reason}</td>
-              <td>{appointment.dateTime}</td>
-              <td>{appointment.duration}</td>
-              <td>{appointment.comments}</td>
-              <td><Button color="danger" href="#">Edit</Button></td>
-              <td><DeleteAppointmentModal appointment={appointment} deleteAppointment={this.props.deleteAppointment} title="DeleteModalFromAppointment"/></td>
+            console.log(new Date(appointment.dateTime.getTime)
+            // <tr key={appointment.id}>
+            //   <td>{appointment.id}</td>
+            //   <td>{appointment.petId}</td>
+            //   <td>{appointment.clientId}</td>
+            //   <td>{appointment.reason}</td>
+            //   <td>{appointment.dateTime}</td>
+            //   <td>{appointment.duration}</td>
+            //   <td>{appointment.comments}</td>
+            //   <td><Button color="danger" href="#">Edit</Button></td>
+            //   <td><DeleteAppointmentModal appointment={appointment} deleteAppointment={this.props.deleteAppointment} title="DeleteModalFromAppointment"/></td>
              
-              </tr>
+            //   </tr>
           ))}
           </tbody>
 
