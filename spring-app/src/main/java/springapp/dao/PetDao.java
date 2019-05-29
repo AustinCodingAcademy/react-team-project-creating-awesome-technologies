@@ -89,7 +89,7 @@ public class PetDao {
 				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
 					PreparedStatement statement = con.prepareStatement("INSERT INTO pets(name, gender, altered, client_id) VALUES (?, ?, ?, ?)");
 					statement.setString(1, pet.getName());
-					statement.setObject(2, pet.getGender());
+					statement.setString(2, pet.getGender().toString());
 					statement.setBoolean(3, pet.isAltered());
 					statement.setInt(4, pet.getClientId());
 					return statement;

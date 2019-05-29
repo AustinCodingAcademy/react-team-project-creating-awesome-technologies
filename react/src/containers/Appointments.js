@@ -4,6 +4,8 @@ import AppointmentList from '../components/AppointmentComponents/AppointmentList
 
 import PropogateLoader from 'react-spinners';
 
+import AppointmentsCalendarView from '../components/AppointmentComponents/AppointmentsCalendarView'
+
 
 export default class Appointments extends Component {
 state = {
@@ -73,6 +75,7 @@ deleteAppointment = async (e) => {
     return (
       <div>
         <h1>Appointments</h1>
+
 
         {
            this.state.appointments.map(appointment => (
