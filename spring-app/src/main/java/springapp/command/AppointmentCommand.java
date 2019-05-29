@@ -28,7 +28,7 @@ public class AppointmentCommand {
 	private Integer petId;
 	private Integer clientId;
 	private Reason reason;
-	private long dateTime;
+	private Date dateTime;
 	private String duration;
 	private String comments;
 
@@ -39,15 +39,13 @@ public class AppointmentCommand {
 	 * @param appointment the appointment to initialize the command object with
 	 */
 	public AppointmentCommand(Appointment appointment) {
-		System.out.println("HEREEEEEEEEEEEEEEEEEEE--------------------------------------");
-		System.out.println(this.dateTime);
-		
+				
 		if(appointment != null) {
 			id = appointment.getId();
 			this.petId = appointment.getPetId();
 			this.clientId = appointment.getClientId();
 			this.reason = appointment.getReason();
-			this.dateTime = appointment.getTime().getTime();
+			this.dateTime = appointment.getTime();
 			this.duration = appointment.getDuration().toString();
 			this.comments = appointment.getComments();
 
@@ -93,7 +91,7 @@ public class AppointmentCommand {
 		this.reason = reason;
 	}
 
-	public long getDateTime() {
+	public Date getDateTime() {
 		System.out.println("HEREEEEEEEEEEEEEEEEEEE--------------------------------------");
 		System.out.println(this.dateTime);
 		return dateTime;
@@ -108,7 +106,7 @@ public class AppointmentCommand {
 
 
 	public void setDateTime(Date time) {
-		this.dateTime = time.getTime();
+		this.dateTime = time;
 	}
 
 	public String getDuration() {
