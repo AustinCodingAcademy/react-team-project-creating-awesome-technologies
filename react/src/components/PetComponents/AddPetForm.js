@@ -53,7 +53,8 @@ export default class AddPetForm extends Component {
 
           <FormGroup check>
             <Label for="altered" check>
-              <Input type="checkbox" id="altered" /> Altered?
+              <Input type="checkbox" id="altered" />
+              <br /> Altered?
             </Label>
           </FormGroup>
           <hr />
