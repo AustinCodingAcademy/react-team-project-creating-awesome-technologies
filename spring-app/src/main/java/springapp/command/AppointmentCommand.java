@@ -15,6 +15,9 @@ import springapp.domain.Appointment;
 import springapp.domain.Reason;
 import springapp.service.ClientService;
 
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 /**
  * This command class is used to pass information back and force between the client and the server
  *
@@ -25,22 +28,18 @@ public class AppointmentCommand {
 	private Integer petId;
 	private Integer clientId;
 	private Reason reason;
-	private Date dateTime;
+	private String dateTime;
 	private String duration;
 	private String comments;
 
-	private String clientName;
-	private String petName;
-
-
-
-
+	
 
 	/**
 	 * Creates a command object that has the initial values the same as the appointment passed in
 	 * @param appointment the appointment to initialize the command object with
 	 */
 	public AppointmentCommand(Appointment appointment) {
+				
 		if(appointment != null) {
 			id = appointment.getId();
 			this.petId = appointment.getPetId();
@@ -51,6 +50,10 @@ public class AppointmentCommand {
 			this.comments = appointment.getComments();
 
 		}
+	}
+	
+	private AppointmentCommand() {
+		
 	}
 
 	public Integer getId() {
@@ -88,8 +91,9 @@ public class AppointmentCommand {
 		this.reason = reason;
 	}
 
-	public Date getDateTime() {
-
+	public String getDateTime() {
+		System.out.println("HEREEEEEEEEEEEEEEEEEEE--------------------------------------");
+		System.out.println(this.dateTime);
 		return dateTime;
 
 	}
@@ -98,11 +102,10 @@ public class AppointmentCommand {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm aaa");
 		return formatter.format(dateTime);
 
-
 	}
 
 
-	public void setDateTime(Date time) {
+	public void setDateTime(String time) {
 		this.dateTime = time;
 	}
 
@@ -131,20 +134,6 @@ public class AppointmentCommand {
 		this.comments = comments;
 	}
 
-	public String getClientName() {
-		return this.clientName;
-	}
-
-	public void setClientName(String clientName) {
-		this.clientName = clientName;
-	}
-
-	public String getPetName() {
-		return this.petName;
-	}
-
-	public void setPetName(String petName) {
-		this.petName = petName;
-	}
+	
 
 }

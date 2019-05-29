@@ -38,23 +38,24 @@ export default class AddAppointmentForm extends Component {
     return (
       <div>
 
-      <Button color="success" onClick={this.toggle}>Add a new appointment</Button>
+      <Button color="info" onClick={this.toggle}>Edit Appointment</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.title}>
-          <ModalHeader toggle={this.toggle}>Create a new appointment</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Edit Appointment for {this.props.appointment.clientId}</ModalHeader>
           <ModalBody>
         
-          <form onSubmit={this.props.addAppointment}>
+          <form onSubmit={this.props.editAppointment}>
           <FormGroup>
           <label for="clientId"> Client </label>
           <Input
                 id="clientId"
-                type="select"
+                type="number"
                 className="form-control"
                 name="clientId"
+                value={this.props.appointment.clientId}
+                readOnly
               >
-                {this.props.clients.map(client => (
-                  <option value={client.id}>{client.name}</option>
-                ))}
+                
+               
               </Input>
           </FormGroup>
           
@@ -63,13 +64,13 @@ export default class AddAppointmentForm extends Component {
 
           <Input
                 id="petId"
-                type="select"
+                type="number"
                 className="form-control"
                 name="petId"
+                value={this.props.appointment.petId}
+                readOnly
               >
-                {this.props.pets.map(pet => (
-                  <option value={pet.id}>{pet.name}</option>
-                ))}
+               
               </Input>
 
           </FormGroup>
@@ -82,6 +83,7 @@ export default class AddAppointmentForm extends Component {
                 type="select"
                 className="form-control"
                 name="reason"
+                value={this.props.appointment.reason}
               >               
               <option value="Sick">Sick</option>
               <option value="Checkup">Checkup</option>
@@ -112,6 +114,7 @@ export default class AddAppointmentForm extends Component {
               type="number"
               className="form-control"
               name="duration"
+              value={this.props.appointment.duration}
             >
               </Input>
             </FormGroup>
@@ -123,6 +126,8 @@ export default class AddAppointmentForm extends Component {
               type="text"
               className="form-control"
               name="comments"
+              value={this.props.appointment.comments}
+
             >
               </Input>
             </FormGroup>
@@ -132,7 +137,7 @@ export default class AddAppointmentForm extends Component {
           <hr />
 
           <div className="float-right"> 
-            <Button color="success" onClick={this.props.toggle} type="submit" >Add Appointment</Button>{' '}
+            <Button color="success" onClick={this.props.toggle} type="submit" >Save Appointment</Button>{' '}
           </div>
 
           <Button color="secondary" onClick={this.props.toggle}>

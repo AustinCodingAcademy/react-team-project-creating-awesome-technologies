@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { Jumbotron, Button } from "reactstrap";
 
+import {BrowserRouter, Link, Route} from 'react-router-dom';
+
 import {
   Collapse,
   Navbar,
@@ -15,6 +17,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import About from "./About";
 
 export default class Header extends Component {
   constructor(props) {
@@ -34,29 +37,35 @@ export default class Header extends Component {
   render() {
     return (
       <div>
+
+        
         <Navbar  color="light" light expand="md">
           <NavbarBrand href="/">NoNameYet</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
+
+          <BrowserRouter>
+
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/About">About</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/Contact">
-                  Contact
-                </NavLink>
+            <NavItem>
+              <Link to="/about" className="nav nav-link mainNav">About</Link> 
+
               </NavItem>
               
-            </Nav>
+            </Nav>           
+
+            </BrowserRouter>
           </Collapse>
         </Navbar>
 
         <Jumbotron>
           <h1 className="display-3">PAWS Veterinary Services</h1>
-          <p className="lead">Description</p>
+          <p class="-large">
+          PAWS Veterinary Services team is committed to treat pets with kindness
+          and compassion.
+        </p>
           <hr className="my-2" />
-        </Jumbotron>
+        </Jumbotron>       
       </div>
     );
   }

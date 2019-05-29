@@ -47,6 +47,11 @@ class App extends Component {
               <Link to="/appointments" className="nav nav-link mainNav">Appointments</Link> 
 
               </NavItem>
+
+              <NavItem>
+              <Link to="/about" className="nav nav-link mainNav">About Us</Link> 
+
+              </NavItem>
               </div>
             </Nav>
             </div>
@@ -57,7 +62,7 @@ class App extends Component {
             <Route exact path="/clients" component={Clients} />
             <Route exact path="/pets" component={Pets} />
             <Route exact path="/appointments" component={Appointments} />
-            <Route exact path="/About/" component={About} />
+            <Route exact path="/about" component={About} />
 
             </div>
             </Row>

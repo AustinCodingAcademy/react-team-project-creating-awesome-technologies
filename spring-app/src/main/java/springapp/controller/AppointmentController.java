@@ -61,9 +61,7 @@ public class AppointmentController {
 				 for (Appointment appointment: appointmentService.getAppointments()) {
 		 			 
 					 AppointmentCommand command = new AppointmentCommand(appointment);	
-					 command.setPetName(petService.getPet(appointment.getPetId()).getName());
-
-					 command.setClientName(clientService.getClient(appointment.getClientId()).getName());
+					 
 					 
 					 appointmentCommands.add(command);
 				 }
@@ -173,7 +171,7 @@ public class AppointmentController {
 			 @RequestParam(value = "hour") int hour, @RequestParam(value = "minute") int minute,
 			 AppointmentCommand command, RedirectAttributes redirectAttributes) throws ParseException {
 		
-		command.setDateTime(processTime(time, date));	
+		command.setDateTime(processTime(time, date).toString());	
 		command.setDuration(hour*60 + minute);
 		
 		appointmentService.saveAppointment(command);
