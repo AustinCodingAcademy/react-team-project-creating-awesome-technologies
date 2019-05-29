@@ -28,8 +28,7 @@ export default class AddClientForm extends Component {
 <Button color="primary" onClick={this.toggle}>{this.props.buttonLabel} Add Client</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Adding a new Client</ModalHeader>
-          <ModalBody>
-        
+          <ModalBody>       
 
           <form onSubmit={this.props.addClient}>
           <FormGroup>

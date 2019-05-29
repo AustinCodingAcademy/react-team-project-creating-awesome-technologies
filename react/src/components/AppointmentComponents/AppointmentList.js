@@ -35,10 +35,10 @@ export default class AppointmentList extends Component {
               <td><Moment format="MM-DD-YYYY hh:mm a">{appointment.time}</Moment></td>
               <td>{appointment.duration}</td>
               <td>{appointment.comments}</td>
-              <td><EditAppointmentForm appointment={appointment} saveAppointment={this.props.saveAppointment} title="EditAppointmentForm"/></td>
+              <td><EditAppointmentForm appointment={appointment} editAppointment={this.props.editAppointment} title="EditAppointmentForm"/></td>
               <td><DeleteAppointmentModal appointment={appointment} deleteAppointment={this.props.deleteAppointment} title="DeleteModalFromAppointment"/></td>
              
-              </tr>
+            </tr>
           ))}
           </tbody>
 
