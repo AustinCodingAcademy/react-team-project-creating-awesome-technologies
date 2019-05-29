@@ -83,7 +83,8 @@ class EditPetModal extends React.Component {
 
               <FormGroup check>
                 <Label for="altered" check>
-                  <Input type="checkbox" id="altered" name="altered" /> Altered?
+                  <Input type="checkbox" id="altered" name="altered" />
+                  <br /> Altered?
                 </Label>
               </FormGroup>
             </ModalBody>
