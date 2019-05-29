@@ -15,23 +15,16 @@ export default class AddAppointmentForm extends Component {
       value: new Date()
     };
 
-
-
     this.toggle = this.toggle.bind(this);
   }
 
   onChange = value => this.setState({ value })
-
-
 
   toggle() {
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
   }
-
- 
-
 
   render() {
     const { value } = this.state.value;
@@ -127,25 +120,20 @@ export default class AddAppointmentForm extends Component {
               </Input>
             </FormGroup>
           
-
-
           <hr />
 
           <div className="float-right"> 
-            <Button color="success" onClick={this.props.toggle} type="submit" >Add Appointment</Button>{' '}
+            <Button color="success" onClick={this.toggle} type="submit" >Add Appointment</Button>{' '}
           </div>
 
-          <Button color="secondary" onClick={this.props.toggle}>
+          <Button color="secondary" onClick={this.toggle}>
               Cancel
             </Button>
-
           
         </form>
 
           </ModalBody>
-          </Modal>
-
-        
+          </Modal>       
         
       </div>
     )
