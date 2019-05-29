@@ -39,6 +39,9 @@ public class AppointmentCommand {
 	 * @param appointment the appointment to initialize the command object with
 	 */
 	public AppointmentCommand(Appointment appointment) {
+		System.out.println("HEREEEEEEEEEEEEEEEEEEE--------------------------------------");
+		System.out.println(this.dateTime);
+		
 		if(appointment != null) {
 			id = appointment.getId();
 			this.petId = appointment.getPetId();
