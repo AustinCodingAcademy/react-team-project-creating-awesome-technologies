@@ -1,37 +1,22 @@
 import React, { Component } from 'react';
 import { Row, FormGroup, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
+import editClient from "../../containers/Clients";
 
 
 export default class EditClientForm extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-
-    this.toggle = this.toggle.bind(this);
-  }
-
-  toggle() {
-    this.setState(prevState => ({
-      modal: !prevState.modal
-    }));
-  }
 
 
   render() {
-    return (
+    console.log('Rendering EditClientForm')
+
+
+    return (   
       <div>
 
-<Button color="success" onClick={this.toggle}>{this.props.buttonLabel} Add Client</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Adding a new Client</ModalHeader>
-          <ModalBody>
-        
 
-          <form onSubmit={this.props.addClient}>
+          {/* <form onSubmit={this.props.editClient}> */}
+<form>
           <FormGroup>
           <label for="name"> Name </label>
 
@@ -51,19 +36,17 @@ export default class EditClientForm extends Component {
           <hr />
 
           <div className="float-right"> 
-            <Button color="success" type="submit" onClick={this.toggle}>Add Client</Button>{' '}
+            <Button color="success" type="submit" onClick={this.props.editClient}>Edit Client</Button>{' '}
             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
           </div>
 
           
         </form>
-          </ModalBody>
-          
-        </Modal>
 
 
+</div>
 
-      </div>
+      
     )
   }
 }

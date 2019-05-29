@@ -1,5 +1,4 @@
 package springapp.domain;
-import java.sql.Timestamp;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,7 @@ import springapp.dao.AppointmentDao;
 import springapp.service.ClientService;
 
 public class Appointment {
-	
+
 	private final Integer id;
 	private final Integer petId;
 	private final Integer clientId;
@@ -18,16 +17,16 @@ public class Appointment {
 	private String comments;
 
 	public Appointment(Integer myId, Integer myPetId, Integer myClientId, Reason myReason, Date dateTime, Integer myDuration, String myComments){
-		
+
 		this.id = myId;
 		this.petId = myPetId;
-		this.clientId = myClientId;		
+		this.clientId = myClientId;
 		this.reason = myReason;
 		this.dateTime = dateTime;
 		this.duration = myDuration;
 		this.comments = myComments;
 	}
-	
+
 	public Reason getReason() {
 		return reason;
 	}
@@ -40,7 +39,7 @@ public class Appointment {
 		return dateTime;
 	}
 
-	public void setTime(Timestamp time) {
+	public void setTime(Date time) {
 		this.dateTime = time;
 	}
 
@@ -70,7 +69,7 @@ public class Appointment {
 	public Integer getDuration() {
 		// TODO Auto-generated method stub
 		return duration;
-	}	
-	
-	
+	}
+
+
 }
