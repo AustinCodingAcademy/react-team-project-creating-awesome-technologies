@@ -4,7 +4,7 @@ import { Button, Table} from "reactstrap";
 import DeleteAppointmentModal from './DeleteAppointmentModal';
 import EditAppointmentForm from './EditAppointmentForm';
 
-import Moment from 'moment';
+import Moment from 'react-moment';
 
 export default class AppointmentList extends Component {
   render() {
@@ -31,7 +31,8 @@ export default class AppointmentList extends Component {
               <td>{appointment.petId}</td>
               <td>{appointment.clientId}</td>
               <td>{appointment.reason}</td>
-              <td>{appointment.dateTime}</td>
+              
+              <td><Moment format="MM-DD-YYYY hh:mm a">{appointment.time}</Moment></td>
               <td>{appointment.duration}</td>
               <td>{appointment.comments}</td>
               <td><EditAppointmentForm appointment={appointment} saveAppointment={this.props.saveAppointment} title="EditAppointmentForm"/></td>

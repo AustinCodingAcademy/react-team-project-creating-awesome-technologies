@@ -17,7 +17,8 @@ state = {
 componentDidMount = async () => {
   const appointmentsResponse = await fetch('/api/appointments');
   const appointments = await appointmentsResponse.json();
-  console.log(appointments.length);
+  console.log("here is the appointments date ");
+
   this.setState({ appointments: appointments });
 
   const petsResponse = await fetch('/api/pets');
@@ -72,6 +73,12 @@ deleteAppointment = async (e) => {
     return (
       <div>
         <h1>Appointments</h1>
+
+        {
+           this.state.appointments.map(appointment => (
+            console.log(appointment.dateTime)
+          ))
+        }
 
        {this.state.appointments.length != 0 ? (
          <div>
