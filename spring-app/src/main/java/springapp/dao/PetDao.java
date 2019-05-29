@@ -89,7 +89,7 @@ public class PetDao {
 				public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
 					PreparedStatement statement = con.prepareStatement("INSERT INTO pets(name, gender, altered, client_id) VALUES (?, ?, ?, ?)");
 					statement.setString(1, pet.getName());
-					statement.setObject(2, pet.getGender());
+					statement.setString(2, pet.getGender().toString());
 					statement.setBoolean(3, pet.isAltered());
 					statement.setInt(4, pet.getClientId());
 					return statement;
@@ -102,7 +102,7 @@ public class PetDao {
 		} else {
 			// notice that we do not update the client id since we do not want to enable pet transfer from this method
 			jdbcTemplate.update("UPDATE pets SET name = ?, gender = ? , altered = ?  WHERE id = ?",
-					new Object[] {pet.getName(), pet.getGender(), pet.isAltered(), id});
+					new Object[] {pet.getName(), pet.getGender().toString(), pet.isAltered(), id});
 		}
 		
 		return get(id);
