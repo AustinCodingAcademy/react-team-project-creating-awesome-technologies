@@ -105,7 +105,7 @@ public class AppointmentDao {
 		} else {
 			jdbcTemplate.update(
 					"UPDATE appointments SET pet_id = ?, client_id = ? , reason = ?, appt_time = ?, duration = ?, comments = ? WHERE id = ?",
-					new Object[] { appointment.getPetId(), appointment.getClientId(), appointment.getReason(),
+					new Object[] { appointment.getPetId(), appointment.getClientId(), appointment.getReason().toString(),
 							appointment.getTime(), appointment.getDuration(), appointment.getComments(),
 							id });
 
