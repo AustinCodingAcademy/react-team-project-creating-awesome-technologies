@@ -4,8 +4,8 @@ import { Jumbotron, Row } from "reactstrap";
 export default class Footer extends Component {
   render() {
     return (
-      <div>
-        <footer className="myFooter">
+      <div className="container-fluid bg-dark">
+        <footer className="myFooter container">
           <Row>
             <div class="col-md-4">
               <h4 className="addressphonetitle">Address / Phone</h4>
