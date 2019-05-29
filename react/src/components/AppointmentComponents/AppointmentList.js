@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 import { Button, Table} from "reactstrap";
+import DeleteAppointmentModal from './DeleteAppointmentModal';
+import EditAppointmentForm from './EditAppointmentForm';
+
+import Moment from 'react-moment';
 
 export default class AppointmentList extends Component {
   render() {
@@ -21,16 +25,18 @@ export default class AppointmentList extends Component {
           <tbody>
 
           {this.props.appointments.map(appointment => (
+            
             <tr key={appointment.id}>
-              <td>{appointment.pet_id}</td>
-              <td>{appointment.client_id}</td>
-              <td>{appointment.appt_time}</td>
+              <td>{appointment.id}</td>
+              <td>{appointment.petId}</td>
+              <td>{appointment.clientId}</td>
+              <td>{appointment.reason}</td>
+              
+              <td><Moment format="MM-DD-YYYY hh:mm a">{appointment.time}</Moment></td>
               <td>{appointment.duration}</td>
               <td>{appointment.comments}</td>
-
-              
-              <td><Button color="success" href="/appointments/edit">Edit</Button></td>
-              <td><Button color="danger" href="/appointments/delete">Delete</Button></td>
+              <td><EditAppointmentForm appointment={appointment} saveAppointment={this.props.saveAppointment} title="EditAppointmentForm"/></td>
+              <td><DeleteAppointmentModal appointment={appointment} deleteAppointment={this.props.deleteAppointment} title="DeleteModalFromAppointment"/></td>
              
               </tr>
           ))}

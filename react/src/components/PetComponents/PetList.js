@@ -31,13 +31,13 @@ export default class PetList extends Component {
               <td>{pet.name}</td>
               <td>{pet.gender}</td>
               <td>{pet.clientId}</td>
-              <td>{pet.fixed === false ? 'Nah' : 'Yurp'}</td>
+              <td>{pet.altered === false ? 'Nah' : 'Yurp'}</td>
 
               <td><EditPetModal buttonLabel='Edit' pet={pet} edit={this.props.editPet} clients={this.props.clients}/></td>
               <td><DeletePetModal buttonLabel='Delete' pet={pet} deletePet={this.props.deletePet} /></td>
               </tr>
           ))}
-          
+
           </tbody>
 
           </Table>
