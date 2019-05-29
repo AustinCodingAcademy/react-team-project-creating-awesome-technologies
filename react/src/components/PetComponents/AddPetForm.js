@@ -18,8 +18,6 @@ export default class AddPetForm extends Component {
     return (
       <div>
         <form onSubmit={this.props.addPet}>
-
-
           <FormGroup>
             <Label for="name"> Name </Label>
             <Input type="text" className="form-control" id="name" name="name" />

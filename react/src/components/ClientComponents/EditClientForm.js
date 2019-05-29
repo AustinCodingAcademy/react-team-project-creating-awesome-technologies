@@ -6,7 +6,8 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  ModalFooter,
+  Label
 } from "reactstrap";
 import editClient from "../../containers/Clients";
 
@@ -16,15 +17,15 @@ export default class EditClientForm extends Component {
 
     return (
       <div>
-        <form>
+        <form edit-id={this.props.clientId} onSubmit={this.props.editClient}>
+          <ModalBody>
           <FormGroup>
-            <label for="name"> Name </label>
-
+            <Label for="name"> Name </Label>
             <input type="text" className="form-control" id="name" name="name" />
           </FormGroup>
 
           <FormGroup>
-            <label for="address"> Address</label>
+            <Label for="address"> Address</Label>
             <input
               id="address"
               type="text"
@@ -34,7 +35,7 @@ export default class EditClientForm extends Component {
           </FormGroup>
 
           <FormGroup>
-            <label for="phoneNumber"> Phone Number </label>
+            <Label for="phoneNumber"> Phone Number </Label>
 
             <input
               id="phoneNumber"
@@ -43,20 +44,20 @@ export default class EditClientForm extends Component {
               name="phoneNumber"
             />
           </FormGroup>
-          <hr />
+          </ModalBody>
 
-          <div className="float-right">
+          <ModalFooter>
             <Button
               color="success"
               type="submit"
-              onClick={this.props.editClient}
+              onClick={this.props.toggle}
             >
               Edit Client
             </Button>{" "}
-            <Button color="secondary" onClick={this.toggle}>
+            <Button color="secondary" onClick={this.props.toggle}>
               Cancel
             </Button>
-          </div>
+            </ModalFooter>
         </form>
       </div>
     );
