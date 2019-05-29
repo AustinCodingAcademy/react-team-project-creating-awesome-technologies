@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import AddAppointmentForm from '../components/AppointmentComponents/AddAppointmentForm';
 import AppointmentList from '../components/AppointmentComponents/AppointmentList';
 
-import PropogateLoader from 'react-spinners';
-
 import AppointmentsCalendarView from '../components/AppointmentComponents/AppointmentsCalendarView'
 
 
@@ -78,11 +76,7 @@ deleteAppointment = async (e) => {
 
         {/* <AppointmentsCalendarView appointments={this.state.appointments} /> */}
 
-        {
-           this.state.appointments.map(appointment => (
-            console.log(appointment.dateTime)
-          ))
-        }
+        
 
        {this.state.appointments.length != 0 ? (
          <div>

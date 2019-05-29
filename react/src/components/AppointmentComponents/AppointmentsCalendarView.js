@@ -1,80 +1,70 @@
-// import React, { Component } from 'react'
+import React, { Component } from "react";
 
-// import BigCalendar from 'react-big-calendar'
-// import moment from 'moment'
+import BigCalendar from "react-big-calendar";
+import moment, { duration } from "moment";
 
-// import dates from '../../utils/date'
+import dates from "../../utils/date";
 
-// const localizer = BigCalendar.momentLocalizer(moment) // or globalizeLocalizer
+const localizer = BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
-// let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
+let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
 
+const ColoredDateCellWrapper = ({ children }) =>
+  React.cloneElement(React.Children.only(children), {
+    style: {
+      backgroundColor: "lightblue"
+    }
+  });
+const events = [];
 
-// const ColoredDateCellWrapper = ({ children }) =>
-//   React.cloneElement(React.Children.only(children), {
-//     style: {
-//       backgroundColor: 'lightblue',
-//     },
-//   })
+const MyCalendar = props => (
+  <div>
+    <BigCalendar
+      events={events}
+      views={allViews}
+      defaultView={BigCalendar.Views.WORK_WEEK}
+      step={60}
+      defaultDate={new Date()}
+      localizer={localizer}
+    />
+  </div>
+);
 
-//   let events = [{
-//     id: 0,
-//     title: '',
-//     allDay: true,
-//     start: '',
-//     end: '',
-//   }]
+export default class AppointmentsCalendarView extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-//   this.props.appointments.map(appointment => (
-//     events = [
-//       ...events,
-//       {
-//         id: appointment.id,
-//         title: "test",
-//         allDay: true,
-//         start: '',
-//         end:''
-//       }
-//     ]
-//    // events[appointment.id] = {id: appointment.id, title: appointment.comments}
-//   ))
+  render() {
+    return (
+      <div>
+       
 
-// const MyCalendar = props => (
-//   <div>
-//     <BigCalendar
-//     events={events}
-//     views={allViews}
-//     defaultView={BigCalendar.Views.WORK_WEEK}
-//     step={60}
-//     defaultDate={new Date()}
-//     localizer={localizer}
-//   />
-//   </div>
-// )
+{this.props.appointments.map(appointment => (  
+  
+  events.push({
+    id: events.length++,
+    title: appointment.comments,
+    allDay: false,
+    start:new Date(Date.parse(appointment.time)),
+    end: new Date(new Date(Date.parse(appointment.time)).setHours(appointment.dura))
+  })
+)
 
+)}
 
+for (const [key, value] of appointments.entries()) {
+    events.push()
+  }
 
-// export default class AppointmentsCalendarView extends Component {
+          
+{        
+  console.log(events)
+}
 
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       modal: false,
-//       value: new Date()
-//     };
-//   }
-
-
-//   render() {
-//     return (
-//       <div>
-
-// <MyCalendar 
-// />
-
-        
-        
-//       </div>
-//     )
-//   }
-// }
+        <MyCalendar 
+        />
+      </div>
+    );
+  }
+}
