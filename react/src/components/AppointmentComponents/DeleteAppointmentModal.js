@@ -20,7 +20,7 @@ class DeleteAppointmentModal extends React.Component {
   render() {
     return (
       <div>
-        <Button color="info" onClick={this.toggle}>Delete</Button>
+        <Button color="danger" onClick={this.toggle}>Delete</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.title}>
           <ModalHeader toggle={this.toggle}>Are you sure you want to delete {this.props.appointment.name}?</ModalHeader>
           <ModalBody>

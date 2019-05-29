@@ -91,7 +91,8 @@ public class AppointmentCommand {
 	}
 
 	public long getDateTime() {
-
+		System.out.println("HEREEEEEEEEEEEEEEEEEEE--------------------------------------");
+		System.out.println(this.dateTime);
 		return dateTime;
 
 	}
